@@ -6,8 +6,17 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
-    <div class="bg-gray-300">
-      <div class="max-w-4xl mx-auto mb-5 px-4">
-        <h1 class="text-3xl py-10"><a href="<?php echo get_home_url(); ?>" class="hover:text-blue-500">Welcome To Our Header!</a></h1>
+    <flex class="p-3 bg-slate-100 flex justify-between items-center">
+      <div class="">
+        <a href="<?php echo get_home_url(); ?>" class="hover:text-blue-500">Logo</a>
       </div>
-    </div>
+      <div class="flex gap-4">
+        <a href="/">首頁</a>
+        <a href="/">精選課程</a>
+        <a href="/">講義專區</a>
+        <a href="/">募資專區</a>
+        <a href="/">資訊交流</a>
+        <a href="/">購物車</a>
+        <a href="/">會員登入</a>
+      </div>
+    </flex>
