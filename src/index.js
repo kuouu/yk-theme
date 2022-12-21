@@ -1,9 +1,19 @@
-import Person from "./scripts/Person"
-import ExampleReactComponent from "./scripts/ExampleReactComponent"
 import React from "react"
 import ReactDOM from "react-dom"
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
-const person1 = new Person("Brad")
-if (document.querySelector("#render-react-example-here")) {
-  ReactDOM.render(<ExampleReactComponent />, document.querySelector("#render-react-example-here"))
+import Home from "./pages/Home";
+
+const router = createBrowserRouter([
+  { path: "/", element: <Home />, },
+  { path: "/about", element: <div>About Page</div>, },
+]);
+
+if (document.querySelector("#root")) {
+  ReactDOM.render(
+    <RouterProvider router={router} />,
+    document.querySelector("#root"))
 }
