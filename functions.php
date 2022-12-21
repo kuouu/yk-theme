@@ -6,6 +6,7 @@ function boilerplate_load_assets() {
 }
 
 add_action('wp_enqueue_scripts', 'boilerplate_load_assets');
+add_action('wp_enqueue_style', 'boilerplate_load_assets');
 
 function boilerplate_add_support() {
   add_theme_support('title-tag');
