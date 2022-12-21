@@ -1,7 +1,9 @@
+import Jumbotron from "../components/home/Jumbotron";
+
 const Home = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
+    <div className="bg-slate-100">
+      <Jumbotron />
     </div>
   );
 }

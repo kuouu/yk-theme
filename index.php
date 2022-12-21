@@ -2,7 +2,7 @@
 
 get_header(); ?>
 
-<div class="max-w-4xl mx-auto px-4">
+<div>
 
   <!-- example react component -->
   <div id="root"></div>
