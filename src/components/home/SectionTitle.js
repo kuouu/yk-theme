@@ -17,7 +17,7 @@ const SectionTitle = ({ text }) => {
         style={trapezium}
         ref={sectionTitleRef}
       >
-        <h2 className="text-3xl font-bold text-slate-100 mx-5 mr-10">
+        <h2 className="text-3xl font-bold text-slate-100 mx-10 mr-14">
           {text}
         </h2>
       </div>
