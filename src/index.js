@@ -1,19 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
-import Home from "./pages/Home";
-
-const router = createBrowserRouter([
-  { path: "/", element: <Home />, },
-  { path: "/about", element: <div>About Page</div>, },
-]);
+import Router from "./router"
 
 if (document.querySelector("#root")) {
   ReactDOM.render(
-    <RouterProvider router={router} />,
+    <Router />,
     document.querySelector("#root"))
 }
