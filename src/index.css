@@ -22,7 +22,7 @@
 /* wp-page container style */
 
 div.prose,
-div.tutor-container,
+div.tutor-wrap,
 div.woocommerce {
   @apply min-h-screen;
   @apply py-4 px-8;
@@ -42,4 +42,10 @@ input.woocommerce-Input {
   @apply focus:outline-none;
   @apply focus:ring-1 focus:ring-blue-500;
   @apply focus:border-blue-500;
+}
+
+/* tutor style */
+
+button.tutor-btn-primary {
+  color: var(--tutor-color-primary);
 }
