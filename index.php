@@ -1,24 +1,19 @@
-<?php
-
-get_header(); ?>
+<?php get_header(); ?>
 
 <div>
-
-  <!-- example react component -->
-  <div id="root"></div>
-
-  <!-- example wordpress loop -->
-  <!-- <div class="prose max-w-full">
+  <div>
     <?php if (have_posts()) {
-      while(have_posts()) {
+      while (have_posts()) {
         the_post(); ?>
-        <div>
+        <div class="prose max-w-full">
           <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
           <?php the_content(); ?>
         </div>
-      <?php }
-    } ?>
-  </div> -->
+    <?php }
+    } else {
+      ?> <div id="root"></div> <?php
+    }?>
+  </div>
 </div>
 
 <?php get_footer();
