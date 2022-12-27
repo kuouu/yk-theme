@@ -6,7 +6,7 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
-    <flex class="p-3 bg-slate-100 flex justify-between items-center">
+    <flex class="py-3 px-8 bg-slate-100 flex justify-between items-center">
       <div class="">
         <a href="<?php echo get_home_url(); ?>" class="hover:text-blue-500">Logo</a>
       </div>
