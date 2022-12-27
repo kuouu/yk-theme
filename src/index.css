@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+@layer components {
   circle {
     width: 12px;
     height: 12px;
@@ -17,4 +17,29 @@
     outline: 1px solid #fff;
     @apply hover:cursor-pointer;
   }
+}
+
+/* wp-page container style */
+
+div.prose,
+div.tutor-container,
+div.woocommerce {
+  @apply min-h-screen;
+  @apply py-4 px-8;
+}
+
+/* woocommerce style */
+
+input.woocommerce-Input {
+  @apply flex flex-row justify-between items-center;
+  @apply w-full;
+  @apply border border-gray-300;
+  @apply rounded;
+  @apply p-2;
+  @apply mb-2;
+  @apply text-sm;
+  @apply text-gray-600;
+  @apply focus:outline-none;
+  @apply focus:ring-1 focus:ring-blue-500;
+  @apply focus:border-blue-500;
 }
