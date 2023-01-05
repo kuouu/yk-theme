@@ -10,7 +10,9 @@
 <body <?php body_class(); ?>>
   <flex class="py-3 px-8 bg-slate-100 flex justify-between items-center">
     <div class="">
-      <a href="<?php echo get_home_url(); ?>" class="hover:text-blue-500">Logo</a>
+      <a href="<?php echo get_home_url(); ?>">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="logo" class="h-12">
+      </a>
     </div>
     <div class="flex gap-4">
       <a href="/">首頁</a>
@@ -24,6 +26,6 @@
       <?php } else { ?>
         <a href="/dashboard">會員登入</a>
       <?php } ?>
-      
+
     </div>
   </flex>
