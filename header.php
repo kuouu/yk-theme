@@ -11,7 +11,7 @@
   <flex class="py-3 px-8 bg-slate-100 flex justify-between items-center">
     <div class="">
       <a href="<?php echo get_home_url(); ?>">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="logo" class="h-12">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="logo" style='height:3rem!important'>
       </a>
     </div>
     <div class="flex gap-4">
