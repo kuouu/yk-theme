@@ -5,8 +5,8 @@ import logo from '../../assets/logo.png'
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const classes = [
-    { name: '基礎工程', link: '/' },
-    { name: '土壤力學', link: '/courses' },
+    { name: '基礎工程', link: '/category/基礎工程' },
+    { name: '土壤力學', link: '/category/土壤力學' },
   ]
 
   const toggle = () => setIsOpen(!isOpen)
