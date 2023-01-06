@@ -4,6 +4,10 @@ import logo from '../../assets/logo.png'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const classes = [
+    { name: '基礎工程', link: '/' },
+    { name: '土壤力學', link: '/courses' },
+  ]
 
   const toggle = () => setIsOpen(!isOpen)
   return (
@@ -16,14 +20,16 @@ const Header = () => {
       <ul class="flex gap-4 list-none">
         <li><a class="block px-4 py-2 hover:text-gray-400" href="/">首頁</a></li>
         <li class="relative">
-          <a class="block px-4 py-2 hover:text-gray-400 hover:cursor-pointer" onClick={toggle}>精選課程</a>
-          <ul class="absolute left-0 top-full bg-white shadow rounded-md py-1 list-none z-10">
-            {isOpen && <>
-              <li><a class="block px-4 py-2 text-black hover:bg-gray-100" href="/courses/course1">Submenu item 1</a></li>
-              <li><a class="block px-4 py-2 text-black hover:bg-gray-100" href="/courses/course2">Submenu item 2</a></li>
-              <li><a class="block px-4 py-2 text-black hover:bg-gray-100" href="/courses/course3">Submenu item 3</a></li>
-            </>}
-          </ul>
+          <a class={`block px-4 py-2 ${isOpen && 'font-bold text-[#032292]'} hover:text-gray-400 hover:cursor-pointer`} onClick={toggle}>精選課程</a>
+          {isOpen && <ul class="absolute grid gap-[1px] left-0 top-full shadow list-none z-10 w-full border-t-2 border-solid border-[#032292]">
+            {classes.map((cls, index) =>
+              <li key={index} className='w-full flex justify-center'>
+                <a style={subNavStyle} href={cls.link} className='text-white hover:text-[#71d0ff]'>
+                  {cls.name}
+                </a>
+              </li>
+            )}
+          </ul>}
         </li>
         <li><a class="block px-4 py-2 hover:text-gray-400" href="/tag/handouts">講義專區</a></li>
         <li><a class="block px-4 py-2 hover:text-gray-400" href="/tag/crowdfunding">募資專區</a></li>
@@ -33,6 +39,19 @@ const Header = () => {
       </ul>
     </flex>
   )
+}
+
+const subNavStyle = {
+  width: '100%',
+  padding: '0.5rem 1rem',
+  textAlign: 'center',
+  fontWeight: 900,
+  backgroundColor: 'rgba(3, 34, 146, 0.35)',
+  '&:hover': {
+    // color: 'rgb(113, 208, 255)',
+    color: 'red!important',
+    backgroundColor: 'red !important',
+  }
 }
 
 export default Header
