@@ -1,5 +1,6 @@
 const Banner = ({ path }) => {
-  console.log(path)
+  path = decodeURI(path)
+
   return (
     <div
       className="flex flex-col items-center justify-center text-center py-20"
