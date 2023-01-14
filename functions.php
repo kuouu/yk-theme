@@ -15,3 +15,14 @@ function add_support()
 }
 
 add_action('after_setup_theme', 'add_support');
+
+function remove_dashboard_links($links){
+	unset($links['reviews']);
+	unset($links['wishlist']);
+	unset($links['my-quiz-attempts']);
+	unset($links['purchase_history']);
+	unset($links['question-answer']);
+	return $links;
+}
+
+add_filter('tutor_dashboard/nav_items', 'remove_dashboard_links');
