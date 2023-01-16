@@ -1,7 +1,7 @@
 const CourseCard = ({ course }) => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="w-64 bg-white rounded-lg shadow-lg p-4">
+      <div className="w-64 bg-zinc-700 rounded-lg shadow-lg p-4">
         <img
           src={'https://picsum.photos/200/300'}
           alt={''}
