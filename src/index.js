@@ -3,6 +3,7 @@ import ReactDOM from "react-dom"
 import Router from "./router"
 
 import Header from "./components/header"
+import Footer from "./components/footer"
 import Banner from "./components/category/Banner"
 
 if (document.querySelector("#root")) {
@@ -15,6 +16,12 @@ if (document.querySelector("#header")) {
   ReactDOM.render(
     <Header />,
     document.querySelector("#header"))
+}
+
+if (document.querySelector("#footer")) {
+  ReactDOM.render(
+    <Footer />,
+    document.querySelector("#footer"))
 }
 
 if (document.querySelector("#category-banner")) {
