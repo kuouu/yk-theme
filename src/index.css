@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply text-zinc-50;
+    @apply bg-zinc-800;
+  }
+  p {
+    @apply text-zinc-50;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-zinc-200 !important;
+  }
+}
+
 @layer components {
   circle {
     width: 12px;

@@ -11,7 +11,7 @@ const Header = () => {
 
   const toggle = () => setIsOpen(!isOpen)
   return (
-    <flex class="py-3 px-8 bg-slate-100 flex justify-between items-center">
+    <flex class="py-3 px-8 flex justify-between items-center">
       <div class="">
         <a href="/">
           <img style={{ height: '3rem' }} src={logo} alt="logo" />

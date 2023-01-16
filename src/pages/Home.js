@@ -5,7 +5,7 @@ import TeacherProfile from "../components/home/TeacherProfile";
 
 const Home = () => {
   return (
-    <div className="bg-slate-100">
+    <div>
       <Jumbotron />
       <div className="py-14">
         <SectionTitle text="課程推薦" />
