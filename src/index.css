@@ -78,3 +78,30 @@ input.woocommerce-Input {
 button.tutor-btn-primary {
   color: var(--tutor-color-primary);
 }
+
+div.tutor-wrap {
+  @apply my-4;
+  @apply min-h-max;
+}
+
+div.tutor-login-wrap {
+  @apply bg-zinc-200;
+  @apply m-auto;
+}
+
+span.tutor-dashboard-menu-item-text {
+  @apply text-zinc-50;
+}
+
+span.tutor-fs-5, 
+div.tutor-fs-5,
+div.tutor-fs-4 {
+  @apply text-zinc-200 !important;
+}
+
+h3.tutor-fs-5,
+h3.tutor-fs-6,
+.tutor-accordion-item-header,
+.tutor-course-content-list-item-title a {
+  @apply text-zinc-800 !important;
+}
