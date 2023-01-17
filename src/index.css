@@ -73,6 +73,24 @@ input.woocommerce-Input {
   @apply focus:border-blue-500;
 }
 
+.woocommerce-info {
+  @apply bg-zinc-600;
+}
+
+div.woocommerce-product-gallery__image--placeholder {
+  @apply border-0 !important;
+}
+
+div.product_meta,
+div.product_meta a,
+a.added_to_cart {
+  @apply text-zinc-50;
+}
+
+input.input-text {
+  @apply text-zinc-800 !important;
+}
+
 /* tutor style */
 
 button.tutor-btn-primary {
