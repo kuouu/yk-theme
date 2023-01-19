@@ -131,12 +131,12 @@ div.tutor-fs-5,
 div.tutor-fs-4,
 label.tutor-form-label,
 button.tutor_cover_uploader
-.tutor-social-field div i {
+.tutor-social-field div i,
+.tutor-color-black,
+ul.tutor-course-details-widget-list {
   @apply text-zinc-200 !important;
 }
 
-h3.tutor-fs-5,
-h3.tutor-fs-6,
 .tutor-accordion-item-header,
 .tutor-course-content-list-item-title a,
 div.tutor-form-select-options {
@@ -150,4 +150,11 @@ div.tutor-form-control {
   @apply bg-transparent !important;
   @apply border rounded;
   @apply px-2 py-1;
+}
+
+div.tutor-card, 
+div.tutor-card-body,
+div.tutor-course-details-instructors,
+div.tutor-course-details-widget {
+  @apply bg-zinc-800 !important;
 }
