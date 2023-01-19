@@ -73,8 +73,23 @@ input.woocommerce-Input {
   @apply focus:border-blue-500;
 }
 
-.woocommerce-info {
+.woocommerce-info,
+a.showcoupon {
   @apply bg-zinc-600;
+  @apply text-zinc-50;
+}
+
+div.woocommerce-checkout-payment {
+  @apply bg-zinc-700 !important;
+  @apply text-zinc-50;
+}
+
+div.payment_box {
+  @apply bg-zinc-600 !important;
+}
+
+div.payment_box::before {
+  @apply border-b-zinc-600 !important;
 }
 
 div.woocommerce-product-gallery__image--placeholder {
@@ -88,7 +103,16 @@ a.added_to_cart {
 }
 
 input.input-text {
-  @apply text-zinc-800 !important;
+  @apply text-zinc-50 !important;
+}
+
+p.cvs-info strong {
+  @apply text-zinc-50 !important;
+}
+
+div.choose_cvs button {
+  @apply bg-zinc-600 !important;
+  @apply text-zinc-50 !important;
 }
 
 ins span.woocommerce-Price-amount, ins bdi {
