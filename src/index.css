@@ -203,3 +203,7 @@ div.tutor-accordion-item-body-content {
 .tutor-course-content-list-item {
   @apply bg-zinc-600 !important;
 }
+
+div.tutor-course-name a {
+  @apply text-zinc-50 !important;
+}
