@@ -133,12 +133,11 @@ label.tutor-form-label,
 button.tutor_cover_uploader
 .tutor-social-field div i,
 .tutor-color-black,
-ul.tutor-course-details-widget-list {
+ul.tutor-course-details-widget-list,
+span.tutor-course-content-list-item-icon {
   @apply text-zinc-200 !important;
 }
 
-.tutor-accordion-item-header,
-.tutor-course-content-list-item-title a,
 div.tutor-form-select-options {
   @apply text-zinc-800 !important;
 }
@@ -155,6 +154,23 @@ div.tutor-form-control {
 div.tutor-card, 
 div.tutor-card-body,
 div.tutor-course-details-instructors,
-div.tutor-course-details-widget {
-  @apply bg-zinc-800 !important;
+div.tutor-single-course-sidebar-more div,
+.tutor-single-course-sidebar-more>div:first-child,
+.tutor-single-course-sidebar-more>div:last-child {
+  @apply bg-zinc-700 !important;
+  @apply border-0;
+}
+
+div.tutor-accordion-item,
+div.tutor-accordion-item-body-content {
+  @apply bg-transparent;
+  @apply border-0;
+}
+
+.tutor-accordion-item-header {
+  @apply bg-zinc-700 !important;
+}
+
+.tutor-course-content-list-item {
+  @apply bg-zinc-600 !important;
 }
