@@ -91,6 +91,19 @@ input.input-text {
   @apply text-zinc-800 !important;
 }
 
+ins span.woocommerce-Price-amount, ins bdi {
+  @apply text-red-600 !important;
+  @apply border-0;
+}
+
+ins {
+  @apply no-underline;
+}
+
+del bdi, span.price del{
+  @apply text-zinc-400 !important;
+}
+
 /* tutor style */
 
 button.tutor-btn-primary {
