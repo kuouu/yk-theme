@@ -102,12 +102,17 @@ a.added_to_cart {
   @apply text-zinc-50;
 }
 
-input.input-text {
+input.input-text,
+p.cvs-info strong,
+.tutor-form-group label {
   @apply text-zinc-50 !important;
 }
 
-p.cvs-info strong {
+div.tutor-form-group input {
   @apply text-zinc-50 !important;
+  @apply bg-transparent !important;
+  @apply border rounded;
+  @apply px-2 py-1;
 }
 
 div.choose_cvs button {
