@@ -104,7 +104,10 @@ a.added_to_cart {
 
 input.input-text,
 p.cvs-info strong,
-.tutor-form-group label {
+.tutor-form-group label,
+ul.woocommerce-order-overview,
+ul.woocommerce-order-overview strong,
+address {
   @apply text-zinc-50 !important;
 }
 
