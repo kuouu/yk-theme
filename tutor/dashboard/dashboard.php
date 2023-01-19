@@ -241,7 +241,6 @@ if (tutor_utils()->get_option('enable_profile_completion')) {
 </div>
 -->
 
-<!--
 <?php
 /**
  * Active users in progress courses
@@ -322,8 +321,8 @@ $courses_in_progress = tutor_utils()->get_active_courses_by_user(get_current_use
 		<?php wp_reset_postdata(); ?>
 	</div>
 <?php endif; ?>
--->
 
+<!--
 <?php
 $instructor_course = tutor_utils()->get_courses_for_instructors(get_current_user_id());
 
@@ -396,36 +395,49 @@ if (count($instructor_course)) {
 <?php
 }
 ?>
+-->
 
-<!-- custom content -->
+<!-- handouts section (customized content) -->
 <?php
 $downloads = WC()->customer->get_downloadable_products();
 ?>
-<div style="height: 30px"></div>
-<div class="tutor-fs-5 tutor-fw-medium tutor-color-black tutor-capitalize-text tutor-mb-24 tutor-dashboard-title">講義</div>
-<table class="tutor-table table-popular-courses">
-	<thead>
-		<tr>
-			<th>講義名稱</th>
-			<th>可下載次數</th>
-			<th>載點</th>
-		</tr>
-	</thead>
-	<tbody>
-		<!-- get woocommerce's downloads and display -->
-		<?php
-		foreach ($downloads as $download) {
-			$download_url = $download['download_url'];
-			$download_name = $download['product_name'];
-			$download_remaining = $download['downloads_remaining'];
-		?>
+<?php if (count($downloads)) : ?>
+	<div style="height: 30px"></div>
+	<div class="tutor-fs-5 tutor-fw-medium tutor-color-black tutor-capitalize-text tutor-mb-24 tutor-dashboard-title">講義</div>
+	<table class="tutor-table table-popular-courses">
+		<thead>
 			<tr>
-				<td><?php echo $download_name; ?></td>
-				<td><?php echo is_numeric($download['downloads_remaining']) ? esc_html($download['downloads_remaining']) : esc_html__('&infin;', 'woocommerce'); ?></td>
-				<td><a href="<?php echo $download_url; ?>" target="_blank">下載</a></td>
+				<th>講義名稱</th>
+				<th>可下載次數</th>
+				<th>載點</th>
 			</tr>
-		<?php
-		}
-		?>
-	</tbody>
-</table>
+		</thead>
+		<tbody>
+			<!-- get woocommerce's downloads and display -->
+			<?php
+			foreach ($downloads as $download) {
+				$download_url = $download['download_url'];
+				$download_name = $download['product_name'];
+				$download_remaining = $download['downloads_remaining'];
+			?>
+				<tr>
+					<td><?php echo $download_name; ?></td>
+					<td><?php echo is_numeric($download['downloads_remaining']) ? esc_html($download['downloads_remaining']) : esc_html__('&infin;', 'woocommerce'); ?></td>
+					<td><a href="<?php echo $download_url; ?>" target="_blank">下載</a></td>
+				</tr>
+			<?php
+			}
+			?>
+		</tbody>
+	</table>
+<?php endif; ?>
+
+<!-- if no data display, use img as placeholder -->
+<?php if (!count($downloads) && !($courses_in_progress && $courses_in_progress->have_posts())) : ?>
+	<div style="height: 30px"></div>
+	<?php $tutor_empty_state_svg = tutor()->url . 'assets/images/emptystate.svg'; ?>
+	<img src="<?php echo $tutor_empty_state_svg; ?>" alt="placeholder" style="width: 100%">
+	<div class="mt-4 text-center">
+		<p>目前沒有任何資料</p>
+	</div>
+<?php endif; ?>
