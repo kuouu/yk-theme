@@ -73,8 +73,140 @@ input.woocommerce-Input {
   @apply focus:border-blue-500;
 }
 
+.woocommerce-info,
+a.showcoupon {
+  @apply bg-zinc-600;
+  @apply text-zinc-50;
+}
+
+div.woocommerce-checkout-payment {
+  @apply bg-zinc-700 !important;
+  @apply text-zinc-50;
+}
+
+div.payment_box {
+  @apply bg-zinc-600 !important;
+}
+
+div.payment_box::before {
+  @apply border-b-zinc-600 !important;
+}
+
+div.woocommerce-product-gallery__image--placeholder {
+  @apply border-0 !important;
+}
+
+div.product_meta,
+div.product_meta a,
+a.added_to_cart {
+  @apply text-zinc-50;
+}
+
+input.input-text,
+p.cvs-info strong,
+.tutor-form-group label,
+ul.woocommerce-order-overview,
+ul.woocommerce-order-overview strong,
+address {
+  @apply text-zinc-50 !important;
+}
+
+div.tutor-form-group input {
+  @apply text-zinc-50 !important;
+  @apply bg-transparent !important;
+  @apply border rounded;
+  @apply px-2 py-1;
+}
+
+div.choose_cvs button {
+  @apply bg-zinc-600 !important;
+  @apply text-zinc-50 !important;
+}
+
+ins span.woocommerce-Price-amount, ins bdi {
+  @apply text-red-600 !important;
+  @apply border-0;
+}
+
+ins {
+  @apply no-underline;
+}
+
+del bdi, span.price del{
+  @apply text-zinc-400 !important;
+}
+
 /* tutor style */
 
 button.tutor-btn-primary {
   color: var(--tutor-color-primary);
+}
+
+div.tutor-wrap {
+  @apply my-4;
+  @apply min-h-max;
+}
+
+div.tutor-login-wrap {
+  @apply bg-zinc-200;
+  @apply m-auto;
+}
+
+span.tutor-dashboard-menu-item-text {
+  @apply text-zinc-50;
+}
+
+span.tutor-fs-5, 
+span.tutor-fs-6, 
+div.tutor-fs-6,
+div.tutor-fs-5,
+div.tutor-fs-4,
+label.tutor-form-label,
+button.tutor_cover_uploader
+.tutor-social-field div i,
+.tutor-color-black,
+ul.tutor-course-details-widget-list,
+span.tutor-course-content-list-item-icon {
+  @apply text-zinc-200 !important;
+}
+
+div.tutor-form-select-options {
+  @apply text-zinc-800 !important;
+}
+
+input.tutor-form-control,
+textarea.tutor-form-control,
+div.tutor-form-control {
+  @apply text-zinc-50 !important;
+  @apply bg-transparent !important;
+  @apply border rounded;
+  @apply px-2 py-1;
+}
+
+div.tutor-card, 
+div.tutor-card-body,
+div.tutor-course-details-instructors,
+div.tutor-single-course-sidebar-more div,
+.tutor-single-course-sidebar-more>div:first-child,
+.tutor-single-course-sidebar-more>div:last-child {
+  @apply bg-zinc-700 !important;
+  @apply border-0;
+}
+
+div.tutor-accordion-item,
+div.tutor-accordion-item-body-content {
+  @apply bg-transparent;
+  @apply border-0;
+}
+
+.tutor-accordion-item-header {
+  @apply bg-zinc-700 !important;
+}
+
+.tutor-course-content-list-item {
+  @apply bg-zinc-600 !important;
+}
+
+div.tutor-course-name a {
+  @apply text-zinc-50 !important;
 }
