@@ -206,3 +206,17 @@ div.tutor-course-name a {
   @apply text-zinc-50 !important;
   @apply bg-zinc-600 !important;
 }
+
+.tutor-course-single-sidebar-wrapper {
+  @apply bg-zinc-700;
+  @apply border-0;
+}
+
+.tutor-course-single-sidebar-title {
+  @apply bg-zinc-800;
+  @apply border-0;
+}
+
+.tutor-course-topic-title {
+  @apply text-zinc-50;
+}
