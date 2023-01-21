@@ -30,7 +30,7 @@ const CourseCard = ({ course, isPromotion }) => {
         <button
           style={buttonStyle}
           className="hover:bg-white hover:text-[#00788c]"
-          onClick={() => handleClick(course.cart)}
+          onClick={() => handleClick(course.link)}
         >
           加入購物車
         </button>

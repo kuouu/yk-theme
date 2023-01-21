@@ -5,6 +5,7 @@ import TeacherProfile from "../components/home/TeacherProfile";
 
 import bg1 from "../assets/homepage-bg1.png";
 import bg2 from "../assets/homepage-bg2.png";
+import cehappiness from "../assets/cehappiness.jpg";
 
 const Home = () => {
   const courses = [
@@ -14,7 +15,7 @@ const Home = () => {
       price: 8000,
       promotion: 4500,
       link: "https://yourknowledge.online/courses/soil-mechanics/",
-      cart: "https://yourknowledge.online/courses/?add-to-cart=25397"
+      id: 25397
     },
     {
       name: "基礎工程",
@@ -22,8 +23,15 @@ const Home = () => {
       price: 8000,
       promotion: 6000,
       link: "https://yourknowledge.online/courses/foundation-engineering/",
-      cart: "https://yourknowledge.online/courses/?add-to-cart=25800"
+      id: 25800
     },
+  ]
+  const teachers = [
+    {
+      name: "土木幸福教練",
+      description: "86年土木技師高考，首試即上榜",
+      img: cehappiness,
+    }
   ]
   return (
     <div>
@@ -46,10 +54,10 @@ const Home = () => {
       </div>
       <div className="py-14 bg-right bg-contain bg-no-repeat" >
         <SectionTitle text="專業師資" />
-        <div className="pt-14 flex justify-center gap-8">
-          <TeacherProfile />
-          <TeacherProfile />
-          <TeacherProfile />
+        <div className="pt-14 flex justify-center">
+          {teachers.map((teacher, index) => (
+            <TeacherProfile key={index} {...teacher} />
+          ))}
         </div>
       </div>
     </div>
