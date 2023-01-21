@@ -404,7 +404,7 @@ $downloads = WC()->customer->get_downloadable_products();
 <?php if (count($downloads)) : ?>
 	<div style="height: 30px"></div>
 	<div class="tutor-fs-5 tutor-fw-medium tutor-color-black tutor-capitalize-text tutor-mb-24 tutor-dashboard-title">講義</div>
-	<table class="tutor-table table-popular-courses">
+	<table class="tutor-table">
 		<thead>
 			<tr>
 				<th>講義名稱</th>

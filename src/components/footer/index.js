@@ -37,7 +37,7 @@ const footer = () => {
       </div>
       <div className="text-center mt-2">
         <p className="text-sm" style={{ color: 'gray!important' }}>
-          © 2021 by Happiness Coach
+          © 2023 by Your Knowledge
         </p>
       </div>
     </footer>

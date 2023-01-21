@@ -200,3 +200,9 @@ div.tutor-accordion-item-body-content {
 div.tutor-course-name a {
   @apply text-zinc-50 !important;
 }
+
+.tutor-table tr td,
+.tutor-table tr td a {
+  @apply text-zinc-50 !important;
+  @apply bg-zinc-600 !important;
+}
