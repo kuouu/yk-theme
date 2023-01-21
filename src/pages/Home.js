@@ -5,7 +5,6 @@ import TeacherProfile from "../components/home/TeacherProfile";
 
 import bg1 from "../assets/homepage-bg1.png";
 import bg2 from "../assets/homepage-bg2.png";
-import cehappiness from "../assets/cehappiness.jpg";
 
 const Home = () => {
   const courses = [
@@ -30,7 +29,7 @@ const Home = () => {
     {
       name: "土木幸福教練",
       description: "86年土木技師高考，首試即上榜",
-      img: cehappiness,
+      img: 'https://yourknowledge.online/wp-content/uploads/2023/01/cehappiness-scaled.jpg',
     }
   ]
   return (

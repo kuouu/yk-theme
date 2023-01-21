@@ -4,7 +4,6 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/Home";
-import building from "./assets/building.png";
 
 const Router = () => {
 
@@ -12,7 +11,7 @@ const Router = () => {
     { path: "/", element: <Home />, exact: true },
     {
       path: "/crowdfunding",
-      element: <div><img src={building} /></div>
+      element: <div><img src={'https://yourknowledge.online/wp-content/uploads/2023/01/comingsoon.png'} /></div>
     }
   ]
 
