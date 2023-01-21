@@ -20,7 +20,12 @@ const Header = () => {
       <ul class="flex gap-4 list-none">
         <li><a class="block px-4 py-2 hover:text-gray-400" href="/">首頁</a></li>
         <li class="relative">
-          <a class={`block px-4 py-2 ${isOpen && 'font-bold text-[#032292]'} hover:text-gray-400 hover:cursor-pointer`} onClick={toggle}>精選課程</a>
+          <a
+            class={`block px-4 py-2 ${isOpen && 'font-bold text-[#29d7ff]'} hover:text-gray-400 hover:cursor-pointer`}
+            onClick={toggle}
+          >
+            精選課程
+          </a>
           {isOpen && <ul class="absolute grid gap-[1px] left-0 top-full shadow list-none z-10 w-full border-t-2 border-solid border-[#032292]">
             {classes.map((cls, index) =>
               <li key={index} className='w-full flex justify-center'>
@@ -32,7 +37,7 @@ const Header = () => {
           </ul>}
         </li>
         <li><a class="block px-4 py-2 hover:text-gray-400" href="/tag/handouts">講義專區</a></li>
-        <li><a class="block px-4 py-2 hover:text-gray-400" href="/tag/crowdfunding">募資專區</a></li>
+        <li><a class="block px-4 py-2 hover:text-gray-400" href="/crowdfunding">募資專區</a></li>
         {/* <li><a href="/">資訊交流</a></li> */}
         <li><a class="block px-4 py-2 hover:text-gray-400" href="/cart">購物車</a></li>
         <li><a class="block px-4 py-2 hover:text-gray-400" href="/dashboard">我的帳號</a></li>
@@ -46,12 +51,7 @@ const subNavStyle = {
   padding: '0.5rem 1rem',
   textAlign: 'center',
   fontWeight: 900,
-  backgroundColor: 'rgba(3, 34, 146, 0.35)',
-  '&:hover': {
-    // color: 'rgb(113, 208, 255)',
-    color: 'red!important',
-    backgroundColor: 'red !important',
-  }
+  backgroundColor: 'rgba(3, 34, 146, 0.35)'
 }
 
 export default Header
