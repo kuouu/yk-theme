@@ -14,7 +14,7 @@ const Jumbotron = () => {
   })
 
   return (
-    <div className="h-screen relative">
+    <div className="lg:h-screen relative">
       <div className='flex gap-2 absolute bottom-8 w-full justify-center z-10'>
         {imageSrc.map((_, idx) =>
           idx === imgIdx ? <circle /> : <circle-outline onClick={() => setImgIdx(idx)} />
@@ -22,7 +22,7 @@ const Jumbotron = () => {
       </div>
       <img
         src={imageSrc[imgIdx]}
-        className="h-full w-full opacity-50 object-cover object-center"
+        className="lg:h-full w-full opacity-50 object-cover object-center"
       />
     </div>
   )

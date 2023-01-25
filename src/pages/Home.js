@@ -37,7 +37,7 @@ const Home = () => {
       <Jumbotron />
       <div className="py-14 bg-right bg-contain bg-no-repeat" style={{backgroundImage: `url(${bg1})`}}>
         <SectionTitle text="課程推薦"/>
-        <div className="pt-14 flex justify-around">
+        <div className="pt-14 flex flex-col justify-around gap-8 md:flex-row">
           {courses.map((course, index) => (
             <CourseCard key={index} course={course} isPromotion={true} />
           ))}
@@ -45,7 +45,7 @@ const Home = () => {
       </div>
       <div className="py-14 bg-left bg-contain bg-no-repeat" style={{backgroundImage: `url(${bg2})`}}>
         <SectionTitle text="熱門課程"/>
-        <div className="pt-14 flex justify-around">
+        <div className="pt-14 flex flex-col justify-around gap-8 md:flex-row">
           {courses.map((course, index) => (
             <CourseCard key={index} course={course} isPromotion={false} />
           ))}
