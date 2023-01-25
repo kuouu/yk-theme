@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 
-import carousel1 from '../../assets/carousel/carousel_1.png'
-import carousel2 from '../../assets/carousel/carousel_2.png'
-import carousel3 from '../../assets/carousel/carousel_3.png'
-
 const Jumbotron = () => {
   const [imgIdx, setImgIdx] = useState(0)
-  const imageSrc = [carousel1, carousel2, carousel3]
+  const imageSrc = [
+    'https://yourknowledge.online/wp-content/uploads/2023/01/carousel_1.png',
+    'https://yourknowledge.online/wp-content/uploads/2023/01/carousel_2.png',
+    'https://yourknowledge.online/wp-content/uploads/2023/01/carousel_3.png'
+  ]
   const nextImg = () => setImgIdx((imgIdx + 1) % imageSrc.length)
   useEffect(() => {
     const timer = setInterval(nextImg, 5000)
