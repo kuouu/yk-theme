@@ -222,3 +222,7 @@ div.tutor-course-name a {
 .tutor-course-topic-title {
   @apply text-zinc-50;
 }
+
+.tutor-course-details-info {
+  @apply hidden;
+}
