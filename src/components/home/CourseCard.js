@@ -7,7 +7,7 @@ const CourseCard = ({ course, isPromotion }) => {
       <div className="w-72 bg-zinc-700 rounded-lg shadow-lg p-4">
         <div className="cursor-pointer" onClick={() => handleClick(course.link)}>
           <img
-            src={course.img}
+            src={course.image.mediaItemUrl}
             className="w-full h-32 object-cover rounded-lg"
           />
           <div className="mt-4">
@@ -17,12 +17,12 @@ const CourseCard = ({ course, isPromotion }) => {
             {isPromotion && (<>
               <div className="text-xs bg-yellow-500 py-1 px-2 rounded">限時特價中</div>
               <div className="flex items-center gap-2">
-                <span className="text-sm text-slate-900 line-through">NT${course.price}</span>
+                <span className="text-sm text-slate-900 line-through">{course.price}</span>
               </div>
             </>)}
             <div className="flex items-center gap-2">
               <span className={`text-md font-bold ${isPromotion ? 'text-red-700' : 'text-zinc-50'}`}>
-                NT${course.promotion}
+                {course.salePrice}
               </span>
             </div>
           </div>

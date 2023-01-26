@@ -1,3 +1,7 @@
+import { useState, useEffect } from "react";
+
+import { getProductByTagId } from "../utils/graphql";
+
 import Jumbotron from "../components/home/Jumbotron";
 import SectionTitle from "../components/home/SectionTitle";
 import CourseCard from "../components/home/CourseCard";
@@ -7,24 +11,12 @@ import bg1 from "../assets/homepage-bg1.png";
 import bg2 from "../assets/homepage-bg2.png";
 
 const Home = () => {
-  const courses = [
-    {
-      name: "土壤力學",
-      img: "https://yourknowledge.online/wp-content/uploads/2022/08/土壤力學封面_工作區域-1.png",
-      price: 8000,
-      promotion: 6000,
-      link: "https://yourknowledge.online/courses/soil-mechanics/",
-      id: 25397
-    },
-    {
-      name: "基礎工程",
-      img: "https://yourknowledge.online/wp-content/uploads/2022/08/基礎工程封面_工作區域-1.png",
-      price: 8000,
-      promotion: 6000,
-      link: "https://yourknowledge.online/courses/foundation-engineering/",
-      id: 25800
-    },
-  ]
+  const [recommendCourses, setRecommendCourses] = useState([])
+  const [trendingCourses, setTrendingCourses] = useState([])
+  useEffect(() => {
+    getProductByTagId(126, setRecommendCourses)
+    getProductByTagId(127, setTrendingCourses)
+  }, [])
   const teachers = [
     {
       name: "土木幸福教練",
@@ -35,18 +27,18 @@ const Home = () => {
   return (
     <div>
       <Jumbotron />
-      <div className="py-14 bg-right bg-contain bg-no-repeat" style={{backgroundImage: `url(${bg1})`}}>
-        <SectionTitle text="課程推薦"/>
+      <div className="py-14 bg-right bg-contain bg-no-repeat" style={{ backgroundImage: `url(${bg1})` }}>
+        <SectionTitle text="課程推薦" />
         <div className="pt-14 flex flex-col justify-around gap-8 md:flex-row">
-          {courses.map((course, index) => (
+          {recommendCourses.map((course, index) => (
             <CourseCard key={index} course={course} isPromotion={true} />
           ))}
         </div>
       </div>
-      <div className="py-14 bg-left bg-contain bg-no-repeat" style={{backgroundImage: `url(${bg2})`}}>
-        <SectionTitle text="熱門課程"/>
+      <div className="py-14 bg-left bg-contain bg-no-repeat" style={{ backgroundImage: `url(${bg2})` }}>
+        <SectionTitle text="熱門課程" />
         <div className="pt-14 flex flex-col justify-around gap-8 md:flex-row">
-          {courses.map((course, index) => (
+          {trendingCourses.map((course, index) => (
             <CourseCard key={index} course={course} isPromotion={false} />
           ))}
         </div>
