@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  p, td, th {
+  p, td, th, strong {
     @apply text-zinc-50 !important;
   }
   body {
