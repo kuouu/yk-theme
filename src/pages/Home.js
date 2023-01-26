@@ -27,22 +27,22 @@ const Home = () => {
   return (
     <div>
       <Jumbotron />
-      <div className="py-14 bg-right bg-contain bg-no-repeat" style={{ backgroundImage: `url(${bg1})` }}>
+      {recommendCourses.length !== 0 && <div className="py-14 bg-right bg-contain bg-no-repeat" style={{ backgroundImage: `url(${bg1})` }}>
         <SectionTitle text="課程推薦" />
-        <div className="pt-14 flex flex-col justify-around gap-8 md:flex-row">
+        <div className="pt-14 flex flex-col justify-around gap-8 flex-wrap md:flex-row">
           {recommendCourses.map((course, index) => (
             <CourseCard key={index} course={course} isPromotion={true} />
           ))}
         </div>
-      </div>
-      <div className="py-14 bg-left bg-contain bg-no-repeat" style={{ backgroundImage: `url(${bg2})` }}>
+      </div>}
+      {trendingCourses.length !== 0 && <div className="py-14 bg-left bg-contain bg-no-repeat" style={{ backgroundImage: `url(${bg2})` }}>
         <SectionTitle text="熱門課程" />
-        <div className="pt-14 flex flex-col justify-around gap-8 md:flex-row">
+        <div className="pt-14 flex flex-col justify-around gap-8 flex-wrap md:flex-row">
           {trendingCourses.map((course, index) => (
             <CourseCard key={index} course={course} isPromotion={false} />
           ))}
         </div>
-      </div>
+      </div>}
       <div className="py-14 bg-right bg-contain bg-no-repeat" >
         <SectionTitle text="專業師資" />
         <div className="pt-14 flex justify-center">
