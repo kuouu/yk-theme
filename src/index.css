@@ -97,7 +97,9 @@ p.cvs-info strong,
 .tutor-form-group label,
 ul.woocommerce-order-overview,
 ul.woocommerce-order-overview strong,
-address {
+address,
+.woosb-title-inner a,
+.woosb-item-product {
   @apply text-zinc-50 !important;
 }
 

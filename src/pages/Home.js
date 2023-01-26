@@ -10,15 +10,15 @@ const Home = () => {
   const courses = [
     {
       name: "土壤力學",
-      img: "https://yourknowledge.online/wp-content/uploads/2022/07/ch1_220702_0.jpg",
+      img: "https://yourknowledge.online/wp-content/uploads/2022/08/土壤力學封面_工作區域-1.png",
       price: 8000,
-      promotion: 4500,
+      promotion: 6000,
       link: "https://yourknowledge.online/courses/soil-mechanics/",
       id: 25397
     },
     {
       name: "基礎工程",
-      img: "https://yourknowledge.online/wp-content/uploads/2022/09/hqdefault.jpg",
+      img: "https://yourknowledge.online/wp-content/uploads/2022/08/基礎工程封面_工作區域-1.png",
       price: 8000,
       promotion: 6000,
       link: "https://yourknowledge.online/courses/foundation-engineering/",
