@@ -1,23 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
+import { getTutorCourses } from '../../utils/restapi'
 
 import logo from '../../assets/logo.png'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [courses, setCourses] = useState([])
   const [sidemenuOpen, setSidemenuOpen] = useState(false)
   const links = [
     { name: '首頁', link: '/' },
     {
-      name: '精選課程', link: [
-        { name: '基礎工程', link: '/courses/foundation-engineering/' },
-        { name: '土壤力學', link: '/courses/soil-mechanics/' }
-      ]
+      name: '精選課程', link: courses
     },
     { name: '講義專區', link: '/tag/handouts' },
     { name: '募資專區', link: '/crowdfunding' },
     { name: '購物車', link: '/cart' },
     { name: '我的帳號', link: '/dashboard' },
   ]
+
+  useEffect(() => {
+    getTutorCourses(setCourses)
+  }, [])
 
   const toggle = () => setIsOpen(!isOpen)
   return (
