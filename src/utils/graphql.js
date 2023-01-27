@@ -26,3 +26,21 @@ export const getProductByTagId = async (id, callback) => {
   const response = await axios.post(url, gqlBody, { headers: headersList })
   callback(response.data.data.products.nodes)
 }
+
+export const getCarouselImages = async (callback) => {
+  const gqlBody = {
+    query: `{
+  mediaItems(where: {search: "carousel"}) {
+    nodes {
+      title
+      mediaItemUrl
+    }
+  }
+}`
+  }
+  const response = await axios.post(url, gqlBody, { headers: headersList })
+  const carouselImages = response.data.data.mediaItems.nodes.map((item) => {
+    return item.mediaItemUrl
+  }).sort()
+  callback(carouselImages)
+}
