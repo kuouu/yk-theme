@@ -43,7 +43,6 @@
 div.prose,
 div.tutor-wrap,
 div.woocommerce {
-  @apply min-h-screen;
   @apply py-4 px-8;
 }
 

@@ -12,7 +12,7 @@ export const getProductByTagId = async (id, callback) => {
    nodes {
      ... on SimpleProduct {
        name
-       price
+       regularPrice
        salePrice
        image {
          mediaItemUrl
@@ -24,6 +24,7 @@ export const getProductByTagId = async (id, callback) => {
 }`
   }
   const response = await axios.post(url, gqlBody, { headers: headersList })
+  console.log(response.data.data.products.nodes);
   callback(response.data.data.products.nodes)
 }
 

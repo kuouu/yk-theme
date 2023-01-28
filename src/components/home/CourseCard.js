@@ -17,7 +17,7 @@ const CourseCard = ({ course, isPromotion }) => {
             {isPromotion && (<>
               <div className="text-xs bg-yellow-500 py-1 px-2 rounded">限時特價中</div>
               <div className="flex items-center gap-2">
-                <span className="text-sm text-slate-900 line-through">{course.price}</span>
+                <span className="text-sm text-slate-900 line-through">{course.regularPrice}</span>
               </div>
             </>)}
             <div className="flex items-center gap-2">
