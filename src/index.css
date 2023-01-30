@@ -127,6 +127,15 @@ del bdi, span.price del{
   @apply text-zinc-400 !important;
 }
 
+section.related, div.product_meta {
+  @apply hidden;
+}
+
+section.up-sells ul li a.woocommerce-LoopProduct-link {
+  pointer-events: none;
+  cursor: default;
+}
+
 /* tutor style */
 
 button.tutor-btn-primary {
