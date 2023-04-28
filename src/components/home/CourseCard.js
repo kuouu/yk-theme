@@ -14,7 +14,7 @@ const CourseCard = ({ course, isPromotion }) => {
             <h3 className="text-xl font-bold text-slate-900">{course.name}</h3>
           </div>
           <div className="flex gap-2 items-center mt-4">
-            {isPromotion && (<>
+            {isPromotion && course.salePrice !== null && (<>
               <div className="text-xs bg-yellow-500 py-1 px-2 rounded">限時特價中</div>
               <div className="flex items-center gap-2">
                 <span className="text-sm text-slate-900 line-through">{course.regularPrice}</span>
@@ -22,7 +22,7 @@ const CourseCard = ({ course, isPromotion }) => {
             </>)}
             <div className="flex items-center gap-2">
               <span className={`text-md font-bold ${isPromotion ? 'text-red-700' : 'text-zinc-50'}`}>
-                {course.salePrice}
+                {course.salePrice !== null ? course.salePrice : course.regularPrice}
               </span>
             </div>
           </div>
