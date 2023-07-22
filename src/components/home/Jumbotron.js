@@ -4,15 +4,16 @@ import { getCarouselImages } from '../../utils/graphql'
 
 const Jumbotron = () => {
   const [imgIdx, setImgIdx] = useState(0)
-  const [imageSrc, setImageSrc] = useState([])
+  const imageSrc = [
+    "https://yourknowledge.online/wp-content/uploads/2023/01/carousel_1.png",
+    "https://yourknowledge.online/wp-content/uploads/2023/01/carousel_2.png",
+    "https://yourknowledge.online/wp-content/uploads/2023/01/carousel_3.png",
+  ]
   const nextImg = () => setImgIdx(imageSrc.length !== 0 ? (imgIdx + 1) % imageSrc.length : 0)
   useEffect(() => {
     const timer = setInterval(nextImg, 5000)
     return () => clearInterval(timer)
   })
-  useEffect(() => {
-    getCarouselImages(setImageSrc)
-  }, [])
 
   return (
     <div className="relative">
