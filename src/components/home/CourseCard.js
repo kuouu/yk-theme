@@ -4,11 +4,11 @@ const CourseCard = ({ course, isPromotion }) => {
   }
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="w-72 bg-zinc-700 rounded-lg shadow-lg p-4">
+      <div className="w-80 bg-zinc-700 shadow-lg p-4">
         <div className="cursor-pointer" onClick={() => handleClick(course.link)}>
           <img
             src={course.image.mediaItemUrl}
-            className="w-full h-32 object-cover rounded-lg"
+            className="w-full h-40 object-cover rounded-lg"
           />
           <div className="mt-4">
             <h3 className="text-xl font-bold text-slate-900">{course.name}</h3>
