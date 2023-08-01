@@ -22,6 +22,10 @@ const Home = () => {
       name: "土木幸福教練",
       description: "86年土木技師高考，首試即上榜",
       img: 'https://yourknowledge.online/wp-content/uploads/2023/01/cehappiness-scaled.jpg',
+    },{
+      name: "Chef Ricky",
+      description: "米其林推薦 Kuoco 360 廚師\n5J 認證 伊比利火腿侍肉師",
+      img: 'https://yourknowledge.online/wp-content/uploads/2023/08/Commercial_Test_8000002.png',
     }
   ]
   return (
@@ -45,7 +49,7 @@ const Home = () => {
       </div>}
       <div className="py-14 bg-right bg-contain bg-no-repeat" >
         <SectionTitle text="專業師資" />
-        <div className="pt-14 flex justify-center">
+        <div className="pt-14 flex justify-center items-start">
           {teachers.map((teacher, index) => (
             <TeacherProfile key={index} {...teacher} />
           ))}
