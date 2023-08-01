@@ -14,7 +14,7 @@ const Header = () => {
       name: '精選課程', link: courses
     },
     { name: '講義專區', link: '/tag/handouts' },
-    { name: '預購專區', link: '/tag/crowdfunding' },
+    { name: '預購專區', link: 'product/chef-ricky' },
     { name: '購物車', link: '/cart' },
     { name: '我的帳號', link: '/dashboard' },
   ]

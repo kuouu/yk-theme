@@ -145,6 +145,10 @@ iframe#nickx_yt_video_0 {
   height: 100%!important;
 }
 
+ul.tabs {
+  display: none
+}
+
 /* tutor style */
 
 button.tutor-btn-primary {

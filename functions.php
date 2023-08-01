@@ -42,7 +42,7 @@ function crowdfunding_num(){
 		$sold_sum += ($sold*$price);
 	}
 	$sold = $product->get_total_sales();
-	$price = $product->get_price();
+	$price = $product->is_on_sale() ? $product->get_sale_price() : $product->get_regular_price();
 	$sold_sum += ($sold*$price);
 	
 	$goal = $product->get_attribute( 'crowdfunding' );
