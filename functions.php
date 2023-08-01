@@ -47,13 +47,23 @@ function crowdfunding_num(){
 	
 	$goal = $product->get_attribute( 'crowdfunding' );
 	$progress = round($sold_sum/$goal*100, 2);
+	
+	// need delete
+	echo '<div class="grid gap-4 grid-cols-2 grid-rows-3">';
+	echo '<strong>課程學員：'.$sold.' 人</strong>';
+	echo '<strong>預計開課：9/9</strong>';
+	echo '<strong>預計時長：4 小時</strong>';
+	echo '<strong>預計單元：17 個</strong>';
+	echo '<strong>觀看時數&emsp;無限</strong>';
+	echo '</div>';
+	// need delete
 
-	echo '<strong>已募資： NT '.$sold_sum.'</strong>';
-	echo '<div class="text-zinc-200 mb-4"><small>募資目標： NT '.$goal.'</small></div>';
-	echo '<div class="border border-[#29d7ff] rounded h-4">
+	echo '<div class=" my-8 px-8 py-1 rounded-lg border- bg-[#41454f]">';
+	echo '<div class="mb-0 flex justify-between "><p>預購進度： '.$progress.'%</p><p class="text-zinc-200">預購目標： NT '.$goal.'</p></div>';
+	echo '<div class="border border-[#e2edff] rounded h-2 mb-8 bg-[#f0f7ff]">
 		<div class="h-full bg-[#29d7ff]" style="width: '.($progress > 100 ? 100 : $progress).'%;"></div>
 	</div>';
-	echo '<p class="mt-0">募資進度： '.$progress.'%</p>';
+	echo '</div>';
 }
 
 add_filter('woocommerce_single_product_summary', 'crowdfunding_num');

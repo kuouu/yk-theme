@@ -136,6 +136,15 @@ section.up-sells ul li a.woocommerce-LoopProduct-link {
   cursor: default;
 }
 
+div.tc_video_slide {
+  aspect-ratio: 16/9!important;
+}
+
+iframe#nickx_yt_video_0 {
+  width: 100%;
+  height: 100%!important;
+}
+
 /* tutor style */
 
 button.tutor-btn-primary {
