@@ -5,7 +5,7 @@ import { getCarouselImages } from '../../utils/graphql'
 const Jumbotron = () => {
   const [imgIdx, setImgIdx] = useState(0)
   const imageSrc = [
-    "https://yourknowledge.online/wp-content/uploads/2023/07/封面橫.jpg",
+    "https://yourknowledge.online/wp-content/uploads/2023/08/封面大圖.jpg",
     "https://yourknowledge.online/wp-content/uploads/2023/01/carousel_1.png",
     "https://yourknowledge.online/wp-content/uploads/2023/01/carousel_2.png",
   ]
