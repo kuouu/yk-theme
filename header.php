@@ -33,4 +33,4 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <div id="header"></div>
+<?php get_template_part('navbar'); ?>
