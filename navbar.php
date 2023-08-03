@@ -25,7 +25,7 @@
         <!-- course submenu -->
         <div class="ml-4 relative group">
             <a href="#" class="text-white hover:text-gray-300 cursor-pointer" onclick="toggleDesktopSubmenu(event)">精選課程</a>
-            <div id="desktopSubmenu" class="z-20 absolute left-0 mt-4 w-24 bg-zinc-800 text-white hidden">
+            <div id="desktopSubmenu" class="z-20 absolute left-0 mt-4 w-24 bg-zinc-800 text-white hidden shadow-lg rounded">
                 <?php foreach ($courseLinks as $course) : ?>
                 <a href="<?php echo $course['link']; ?>" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-400">
                     <?php echo $course['name']; ?>
