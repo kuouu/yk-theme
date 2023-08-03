@@ -2,7 +2,7 @@
 $course = isset($args['course']) ? $args['course'] : array();
 ?>
 
-<div class="w-80 bg-zinc-900 shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+<div class="w-80 bg-zinc-900 shadow-lg overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300">
     <div>
         <a href="<?php echo esc_url($course['link']); ?>">
             <img alt="<?php echo esc_attr($course['name']); ?>" src="<?php echo esc_url($course['image']); ?>"
