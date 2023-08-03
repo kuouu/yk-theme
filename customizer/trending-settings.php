@@ -58,18 +58,18 @@ function theme_customize_trending($wp_customize) {
             $authors_choices[$author->ID] = $author->display_name;
         }
 
-        $wp_customize->add_setting("yourknowledge_course_teacher_$i", array(
+        $wp_customize->add_setting("yourknowledge_trending_course_teacher_$i", array(
             'default' => '',
             'sanitize_callback' => 'absint',
         ));
 
-        $wp_customize->add_control("yourknowledge_course_teacher_{$i}_control", array(
+        $wp_customize->add_control("yourknowledge_trending_course_teacher_{$i}_control", array(
             'label' => __("課程{$i}講師", 'yourknowledge'),
-            'section' => 'yourknowledge_courses_section',
-            'settings' => "yourknowledge_course_teacher_$i",
+            'section' => 'yourknowledge_trending_courses',
+            'settings' => "yourknowledge_trending_course_teacher_$i",
             'type' => 'select',
             'choices' => $authors_choices
-        ));
+        ));        
 
         // 時長
         $wp_customize->add_setting("yourknowledge_trending_course_duration_$i", array(

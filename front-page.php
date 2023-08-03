@@ -14,8 +14,7 @@ $teachers = array(
     )
 );
 
-$courses = array();
-
+$recommendedCourses = array();
 for ($i = 1; $i <= 3; $i++) {
     $course = array(
         'name' => get_theme_mod("yourknowledge_course_name_$i", ''),
@@ -33,7 +32,32 @@ for ($i = 1; $i <= 3; $i++) {
         $course['teacher_name'] = '';
     }
 
-    $courses[] = $course;
+    if (!empty($course['name'])) {
+        $recommendedCourses[] = $course;
+    }
+}
+
+$trendingCourses = array();
+for ($i = 1; $i <= 3; $i++) {
+    $course = array(
+        'image' => get_theme_mod("yourknowledge_trending_course_image_$i"),
+        'name' => get_theme_mod("yourknowledge_trending_course_name_$i"),
+        'registration' => get_theme_mod("yourknowledge_trending_course_registration_$i"),
+        'link' => get_theme_mod("yourknowledge_trending_course_link_$i"),
+        'author' => get_theme_mod("yourknowledge_trending_course_teacher_$i"),
+        'duration' => get_theme_mod("yourknowledge_trending_course_duration_$i"),
+    );
+
+    $teacher = get_userdata($course['author']);
+    if ($teacher) {
+        $course['author'] = $teacher->display_name;
+    } else {
+        $course['author'] = '';
+    }
+
+    if (!empty($course['name'])) {
+        $trendingCourses[] = $course;
+    }
 }
 
 ?>
@@ -42,46 +66,43 @@ for ($i = 1; $i <= 3; $i++) {
 <?php get_template_part('components/jumbotron'); ?>
 
 <!-- Recommended Course -->
-<?php include get_template_directory() . '/components/coursecard.php'; ?>
-<div class="py-14 bg-right bg-contain bg-no-repeat"
-    style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/homepage-bg1.png')">
-    <!-- SectionTitle -->
-    <div class="text-center mb-4">
-        <h2 class="text-3xl font-bold text-zinc-200 border-b-2 border-blue-600 inline-block pb-2">
-            <?php echo esc_html($args['text'] ?? '課程推薦'); ?>
-        </h2>
-    </div>
-    <!-- CourseCard -->
-    <div class="mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <?php foreach ($courses as $course) {
-            if (empty($course['name'])) {
-                continue;
-            }
-            course_card($course);
-        } ?>
-    </div>
-</div>
-
-<!-- trending -->
-<?php if (!empty($trendingCourses)): ?>
-    <div class="py-14 bg-left bg-contain bg-no-repeat"
-        style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/homepage-bg2.png')">
-        <?php get_template_part('components/home/SectionTitle', null, array('text' => '熱門課程')); ?>
-        <div class="pt-14 flex flex-col justify-around gap-8 flex-wrap md:flex-row">
-            <?php foreach ($trendingCourses as $course): ?>
-                <?php
-                // 這裡是模擬的 CourseCard 內容。您可能需要根據您的需求進行調整。
-                ?>
-                <div class="course-card">
-                    <h2>
-                        <?php echo get_the_title($course); ?>
-                    </h2>
-                    <!-- 其他內容... -->
-                </div>
+<?php if (!empty($recommendedCourses)): ?>
+    <div class="py-14 bg-right bg-contain bg-no-repeat"
+        style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/homepage-bg1.png')">
+        <!-- SectionTitle -->
+        <div class="text-center mb-4">
+            <h2 class="text-3xl font-bold text-zinc-200 border-b-2 border-blue-600 inline-block pb-2">
+                <?php echo esc_html($args['text'] ?? '課程推薦'); ?>
+            </h2>
+        </div>
+        <!-- CourseCard -->
+        <div class="mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <?php foreach ($recommendedCourses as $course): ?>
+                <?php get_template_part('/components/recommended-course', null, array('course' => $course)); ?>
             <?php endforeach; ?>
         </div>
     </div>
 <?php endif; ?>
+
+<!-- Trending -->
+<?php if (!empty($trendingCourses)): ?>
+    <div class="py-14 bg-left bg-contain bg-no-repeat"
+        style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/homepage-bg2.png')">
+        <!-- SectionTitle -->
+        <div class="text-center mb-4">
+            <h2 class="text-3xl font-bold text-zinc-200 border-b-2 border-blue-600 inline-block pb-2">
+                熱門課程
+            </h2>
+        </div>
+        <!-- Trending CourseCard -->
+        <div class="mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <?php foreach ($trendingCourses as $course): ?>
+                <?php get_template_part('/components/trending-course', null, array('course' => $course)); ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+<?php endif; ?>
+
 
 <!-- teachers -->
 <!-- <div class="py-14 bg-right bg-contain bg-no-repeat">
