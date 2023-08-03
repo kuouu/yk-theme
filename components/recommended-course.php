@@ -16,7 +16,7 @@ $course = isset($args['course']) ? $args['course'] : array();
             </span>
             <span class="text-sm text-zinc-400 block mb-4">
                 講師：
-                <?php echo esc_html($course['teacher_name']); ?>
+                <?php echo esc_html($course['teacher']); ?>
             </span>
             <a href="<?php echo esc_url($course['link']); ?>"
                 class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition-colors duration-300">

@@ -44,23 +44,16 @@ function theme_customize_recommend($wp_customize) {
         ));
 
         // 課程講師
-        $authors = get_users(array('who' => 'authors'));
-        $authors_choices = array();
-        foreach ($authors as $author) {
-            $authors_choices[$author->ID] = $author->display_name;
-        }
-
         $wp_customize->add_setting("yourknowledge_course_teacher_$i", array(
             'default' => '',
-            'sanitize_callback' => 'absint',
+            'sanitize_callback' => 'sanitize_text_field',
         ));
 
         $wp_customize->add_control("yourknowledge_course_teacher_{$i}_control", array(
             'label' => __("課程{$i}講師", 'yourknowledge'),
             'section' => 'yourknowledge_courses_section',
             'settings' => "yourknowledge_course_teacher_$i",
-            'type' => 'select',
-            'choices' => $authors_choices
+            'type' => 'text'
         ));
 
         // 課程連結

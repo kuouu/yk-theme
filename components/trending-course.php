@@ -19,7 +19,7 @@ $course = isset($args['course']) ? $args['course'] : array();
             </h3>
         </a>
         <div class="text-sm text-gray-300 mb-2 truncate">
-            by <?php echo esc_html($course['author']); ?>
+            by <?php echo esc_html($course['teacher']); ?>
         </div>
         <div class="flex justify-between text-gray-300">
             <div class="flex items-center">

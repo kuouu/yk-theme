@@ -20,17 +20,9 @@ for ($i = 1; $i <= 3; $i++) {
         'name' => get_theme_mod("yourknowledge_course_name_$i", ''),
         'image' => wp_get_attachment_url(get_theme_mod("yourknowledge_course_image_$i")),
         'price' => get_theme_mod("yourknowledge_course_price_$i", ''),
-        'teacher_id' => get_theme_mod("yourknowledge_course_teacher_$i", ''),
+        'teacher' => get_theme_mod("yourknowledge_course_teacher_$i", ''),
         'link' => get_theme_mod("yourknowledge_course_link_$i", '')
     );
-
-    // 獲取講師名稱
-    $teacher = get_userdata($course['teacher_id']);
-    if ($teacher) {
-        $course['teacher_name'] = $teacher->display_name;
-    } else {
-        $course['teacher_name'] = '';
-    }
 
     if (!empty($course['name'])) {
         $recommendedCourses[] = $course;
@@ -44,16 +36,9 @@ for ($i = 1; $i <= 3; $i++) {
         'name' => get_theme_mod("yourknowledge_trending_course_name_$i"),
         'registration' => get_theme_mod("yourknowledge_trending_course_registration_$i"),
         'link' => get_theme_mod("yourknowledge_trending_course_link_$i"),
-        'author' => get_theme_mod("yourknowledge_trending_course_teacher_$i"),
+        'teacher' => get_theme_mod("yourknowledge_trending_course_teacher_$i"),
         'duration' => get_theme_mod("yourknowledge_trending_course_duration_$i"),
     );
-
-    $teacher = get_userdata($course['author']);
-    if ($teacher) {
-        $course['author'] = $teacher->display_name;
-    } else {
-        $course['author'] = '';
-    }
 
     if (!empty($course['name'])) {
         $trendingCourses[] = $course;
