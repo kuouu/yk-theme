@@ -1,15 +1,30 @@
-# Brad&rsquo;s Boilerplate
+# Your Knowledge WordPress Theme
 
-This repo contains one folder that is an example theme, and another folder that is an example block-type plugin. Both folders use the official [@wordpress/scripts](https://www.npmjs.com/package/@wordpress/scripts) package to power the JS(X) and SCSS bundling.
+This repository houses the custom WordPress theme for [Your Knowledge](https://yourknowledge.online). The theme is designed with a sleek and responsive approach, leveraging the power of Tailwind CSS.
 
-This repo is part of [one of my YouTube videos, check it out for a more detailed walkthrough](https://www.youtube.com/watch?v=NKqogVcqDHA).
+## 🌟 Features
 
-After placing one of the folders in your WordPress **themes** or **plugins** folders, you then:
+- **Tailwind CSS**: Crafted using Tailwind CSS for a contemporary and adaptive design.
+- **GraphQL**: Employs GraphQL for efficient data retrieval, ensuring timely content updates.
+- **Docker Integration**: Features a Dockerfile for streamlined containerized deployment.
+- **Continuous Deployment**: Utilizes GitHub Actions for seamless theme deployment.
+- **Custom WordPress Functions**: Incorporates custom functions in `functions.php` to enhance WordPress capabilities.
+- **Utility Functions**: Specialized functions for data extraction from the Tutor LMS plugin and GraphQL.
 
-1. Point your terminal towards the new example folder.
-1. Run `npm install`
-1. Run `npm run start` and the package will now be watching for any saved changes to your JS or SCSS files.
+## 🛠 Installation
 
-Alternatively, you can run `npm run preview` and that will **both** start the watch task **and** start a proxy server running on `localhost:3000` that will automatically refresh the browser anytime you save a change. In order for this feature to work you will need to change the domain in `package.json` on **line #8**. In my file it mentions `myexample.local` but obviously you will have a different local dev domain that you want to proxy.
+1. Clone this repository to your WordPress themes directory.
+2. Activate the theme via the WordPress dashboard.
+3. Ensure all necessary plugins and dependencies are in place.
 
-Enjoy!
+## 💻 Development
+
+```bash
+# Install dependencies
+yarn install
+
+# Start the development server
+yarn start
+
+# Build for production
+yarn build
