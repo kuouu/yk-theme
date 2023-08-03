@@ -2,8 +2,8 @@
 
 function theme_customize_carousel($wp_customize) {
     $wp_customize->add_section('yourtheme_carousel_images', array(
-        'title' => __('Carousel Images', 'yourtheme'),
-        'priority' => 30,
+        'title' => __('輪播圖片', 'yourtheme'),
+        'priority' => 31,
     ));
 
     for ($i = 1; $i <= 3; $i++) {

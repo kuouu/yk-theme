@@ -70,10 +70,12 @@ add_filter('woocommerce_single_product_summary', 'crowdfunding_num');
 
 require get_template_directory() . '/customizer/carousel-settings.php';
 require get_template_directory() . '/customizer/recommend-settings.php';
+require get_template_directory() . '/customizer/trending-settings.php';
 
 function theme_customize_register($wp_customize) {
     theme_customize_carousel($wp_customize);
     theme_customize_recommend($wp_customize);
+	theme_customize_trending($wp_customize);
 }
 add_action('customize_register', 'theme_customize_register');
 

@@ -4,7 +4,7 @@ function theme_customize_recommend($wp_customize) {
     // 添加課程選擇部分
     $wp_customize->add_section('yourknowledge_courses_section', array(
         'title' => __('課程推薦', 'yourknowledge'),
-        'priority' => 30,
+        'priority' => 32,
     ));
 
     for ($i = 1; $i <= 3; $i++) {
