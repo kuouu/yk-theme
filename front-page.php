@@ -9,7 +9,7 @@ $teachers = array(
     ),
     array(
         'name' => 'Chef Ricky',
-        'description' => '米其林推薦 Kuoco 360 廚師\n5J 認證 伊比利火腿切肉師',
+        'description' => "米其林推薦 Kuoco 360 廚師\n5J 認證 伊比利火腿切肉師",
         'img' => 'https://yourknowledge.online/wp-content/uploads/2023/08/Commercial_Test_8000002.png',
     )
 );
@@ -89,17 +89,19 @@ for ($i = 1; $i <= 3; $i++) {
 <?php endif; ?>
 
 
-<!-- teachers -->
-<!-- <div class="py-14 bg-right bg-contain bg-no-repeat">
-    <?php get_template_part('components/home/SectionTitle', null, array('text' => '專業師資')); ?>
-    <div class="pt-14 flex justify-center items-start">
+<!-- Teachers -->
+<div class="py-14 bg-right bg-contain bg-no-repeat">
+    <!-- SectionTitle -->
+    <div class="text-center mb-4">
+        <h2 class="text-3xl font-bold text-zinc-200 border-b-2 border-blue-600 inline-block pb-2">
+            專業師資
+        </h2>
+    </div>
+    <div class="flex justify-center items-start flex-wrap">
         <?php foreach ($teachers as $teacher): ?>
-            <div class="teacher-profile">
-                <img src="<?php echo esc_url($teacher['img']); ?>" alt="<?php echo esc_attr($teacher['name']); ?>">
-                <h3><?php echo esc_html($teacher['name']); ?></h3>
-                <p><?php echo esc_html($teacher['description']); ?></p>
-            </div>
+            <?php get_template_part('components/teacher-profile', null, array('teacher' => $teacher)); ?>
         <?php endforeach; ?>
     </div>
-</div> -->
+</div>
+
 <?php get_footer(); ?>
