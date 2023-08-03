@@ -61,7 +61,7 @@ for ($i = 1; $i <= 3; $i++) {
             </h2>
         </div>
         <!-- CourseCard -->
-        <div class="mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
             <?php foreach ($recommendedCourses as $course): ?>
                 <?php get_template_part('/components/recommended-course', null, array('course' => $course)); ?>
             <?php endforeach; ?>
@@ -80,7 +80,7 @@ for ($i = 1; $i <= 3; $i++) {
             </h2>
         </div>
         <!-- Trending CourseCard -->
-        <div class="mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
             <?php foreach ($trendingCourses as $course): ?>
                 <?php get_template_part('/components/trending-course', null, array('course' => $course)); ?>
             <?php endforeach; ?>
