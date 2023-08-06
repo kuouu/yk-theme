@@ -11,8 +11,6 @@ if (have_posts()) {
       </div>
     <?php 
   }
-} else {
-  echo '<div id="root"></div>';
 }
 
 get_footer();

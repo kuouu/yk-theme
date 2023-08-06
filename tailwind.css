@@ -21,20 +21,36 @@
   }
 }
 
-@layer components {
-  circle {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color:blue;
+div.gradient {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  max-width: 640px;
+  background-image: 
+    radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 1) 0px, transparent 0%),
+    radial-gradient(at 97% 21%, rgb(114, 140, 254) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, rgb(58, 162, 253) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, rgb(90, 101, 252) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, rgb(149, 228, 207) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, rgb(68, 48, 226) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, rgb(28, 11, 98) 0px, transparent 50%);
+  position: fixed;
+  content: "";
+  filter: blur(100px) saturate(80%);
+  right: 40px;
+  opacity: 0.25;
+  pointer-events: none;
+  animation: breathe 15s infinite;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.25;
+    right: 40px;
   }
-  circle-outline {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color:black;
-    outline: 1px solid #fff;
-    @apply hover:cursor-pointer;
+  50% {
+    opacity: 0.45;
+    right: 200px;
   }
 }
 
