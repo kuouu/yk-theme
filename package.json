@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "dev": "tailwindcss -i tailwind.css -o build/styles.css -w",
+    "build": "tailwindcss build tailwind.css -o build/styles.css"
+  },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.9",
     "tailwindcss": "^3.3.3"
