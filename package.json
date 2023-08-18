@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "dev": "tailwindcss -i tailwind.css -o build/styles.css -w",
-    "build": "tailwindcss build tailwind.css -o build/styles.css"
+    "dev": "tailwindcss -i ./tailwind.css -o ./build/index.css -w",
+    "build": "tailwindcss build -i ./tailwind.css -o ./build/index.css"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.9",
