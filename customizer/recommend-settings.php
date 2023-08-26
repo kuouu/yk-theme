@@ -8,6 +8,15 @@ function theme_customize_recommend($wp_customize) {
     ));
 
     for ($i = 1; $i <= 3; $i++) {
+        // 課程圖片
+        $wp_customize->add_setting("yourknowledge_course_image_$i");
+
+        $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, "yourknowledge_course_image_{$i}_control", array(
+            'label' => __("課程{$i}圖片", 'yourknowledge'),
+            'section' => 'yourknowledge_courses_section',
+            'settings' => "yourknowledge_course_image_$i",
+        )));
+        
         // 課程名稱
         $wp_customize->add_setting("yourknowledge_course_name_$i", array(
             'default' => '',
@@ -20,15 +29,6 @@ function theme_customize_recommend($wp_customize) {
             'settings' => "yourknowledge_course_name_$i",
             'type' => 'text'
         ));
-
-        // 課程圖片
-        $wp_customize->add_setting("yourknowledge_course_image_$i");
-
-        $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, "yourknowledge_course_image_{$i}_control", array(
-            'label' => __("課程{$i}圖片", 'yourknowledge'),
-            'section' => 'yourknowledge_courses_section',
-            'settings' => "yourknowledge_course_image_$i",
-        )));
 
         // 課程價格
         $wp_customize->add_setting("yourknowledge_course_price_$i", array(
