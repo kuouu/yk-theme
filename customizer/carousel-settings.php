@@ -17,5 +17,15 @@ function theme_customize_carousel($wp_customize) {
             'section' => 'yourtheme_carousel_images',
             'settings' => "carousel_image_$i",
         )));
+
+        $wp_customize->add_setting("carousel_link_$i", array(
+            'default'   => '',
+            'transport' => 'refresh',
+        ));
+        $wp_customize->add_control("carousel_link_$i", array(
+            'label'    => sprintf(__('輪播圖片 %s 連結', 'yourtheme'), $i),
+            'section'  => 'yourtheme_carousel_images',
+            'type'     => 'url',
+        ));
     }
 }

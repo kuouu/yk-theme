@@ -4,6 +4,11 @@ $imageSrc = array(
     get_theme_mod('carousel_image_2'),
     get_theme_mod('carousel_image_3'),
 );
+$linkUrls = array(
+    get_theme_mod('carousel_link_1'),
+    get_theme_mod('carousel_link_2'),
+    get_theme_mod('carousel_link_3'),
+);
 ?>
 
 <div class="relative w-full pt-[56%]">
@@ -14,7 +19,13 @@ $imageSrc = array(
             <?php endforeach; ?>
         </div>
         <?php foreach ($imageSrc as $idx => $img): ?>
-            <img src="<?php echo esc_url($img); ?>" class="lg:h-full w-full object-contain object-center jumbotron-image <?php echo $idx === 0 ? 'active' : ''; ?>" alt="Jumbotron Image">
+            <a href="<?php echo esc_url($linkUrls[$idx]); ?>">
+                <img 
+                    src="<?php echo esc_url($img); ?>" 
+                    class="lg:h-full w-full object-contain object-center jumbotron-image <?php echo $idx === 0 ? 'active' : ''; ?>" 
+                    alt="Jumbotron Image"
+                >
+            </a>
         <?php endforeach; ?>
     <?php endif; ?>
 </div>
