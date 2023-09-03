@@ -2,7 +2,9 @@
 $course = isset($args['course']) ? $args['course'] : array();
 ?>
 <div
-    class="flex flex-col justify-start items-center mb-6 bg-zinc-900 shadow-md hover:shadow-2xl transition-shadow duration-300 w-80">
+    class="flex flex-col justify-start items-center mb-6 bg-zinc-900 shadow-md hover:shadow-2xl transition-shadow duration-300 w-80 cursor-pointer"
+    onclick="location.href='<?php echo esc_url($course['link']); ?>'"
+>
     <img src="<?php echo esc_url($course['image']); ?>" class="w-full h-40 object-cover"
         alt="<?php echo esc_attr($course['name']); ?>">
     <div class="p-4 w-full">
