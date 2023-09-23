@@ -9,6 +9,7 @@
     <?php
         $links = array(
         array('name' => '講義專區', 'link' => home_url('/tag/handouts')),
+        array('name' => '電商專區', 'link' => home_url('/tag/eshop')),
         array('name' => '預購專區', 'link' => home_url('/courses/chef-ricky')),
         array('name' => '購物車', 'link' => home_url('/cart')),
         array('name' => '我的帳號', 'link' => home_url('/dashboard'))
