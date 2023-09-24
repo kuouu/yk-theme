@@ -7,7 +7,7 @@ function theme_customize_recommend($wp_customize) {
         'priority' => 32,
     ));
 
-    for ($i = 1; $i <= 3; $i++) {
+    for ($i = 1; $i <= 10; $i++) {
         // 課程圖片
         $wp_customize->add_setting("yourknowledge_course_image_$i");
 

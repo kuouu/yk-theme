@@ -6,7 +6,7 @@ function theme_customize_trending($wp_customize) {
         'priority' => 33,
     ));
 
-    for ($i = 1; $i <= 3; $i++) { // 假設您想要3個熱門課程設定
+    for ($i = 1; $i <= 10; $i++) { // 假設您想要3個熱門課程設定
         // 圖片
         $wp_customize->add_setting("yourknowledge_trending_course_image_$i", array(
             'default'   => '',

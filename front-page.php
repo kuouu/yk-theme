@@ -15,7 +15,7 @@ $teachers = array(
 );
 
 $recommendedCourses = array();
-for ($i = 1; $i <= 3; $i++) {
+for ($i = 1; $i <= 10; $i++) {
     $course = array(
         'name' => get_theme_mod("yourknowledge_course_name_$i", ''),
         'image' => wp_get_attachment_url(get_theme_mod("yourknowledge_course_image_$i")),
@@ -30,7 +30,7 @@ for ($i = 1; $i <= 3; $i++) {
 }
 
 $trendingCourses = array();
-for ($i = 1; $i <= 3; $i++) {
+for ($i = 1; $i <= 10; $i++) {
     $course = array(
         'image' => get_theme_mod("yourknowledge_trending_course_image_$i"),
         'name' => get_theme_mod("yourknowledge_trending_course_name_$i"),
