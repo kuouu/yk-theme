@@ -6,14 +6,14 @@ function theme_customize_carousel($wp_customize) {
         'priority' => 31,
     ));
 
-    for ($i = 1; $i <= 3; $i++) {
+    for ($i = 1; $i <= 10; $i++) {
         $wp_customize->add_setting("carousel_image_$i", array(
             'default' => '',
             'transport' => 'refresh',
         ));
 
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "carousel_image_$i", array(
-            'label' => __("Carousel Image $i", 'yourtheme'),
+            'label' => __("輪播圖片 $i", 'yourtheme'),
             'section' => 'yourtheme_carousel_images',
             'settings' => "carousel_image_$i",
         )));

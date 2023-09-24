@@ -1,27 +1,28 @@
 <?php
-$imageSrc = array(
-    get_theme_mod('carousel_image_1'),
-    get_theme_mod('carousel_image_2'),
-    get_theme_mod('carousel_image_3'),
-);
-$linkUrls = array(
-    get_theme_mod('carousel_link_1'),
-    get_theme_mod('carousel_link_2'),
-    get_theme_mod('carousel_link_3'),
-);
+$carouselImages = array();
+for ($i = 1; $i <= 10; $i++) {
+    $images = array(
+        'src' => get_theme_mod("carousel_image_$i", ''),
+        'link' => get_theme_mod("carousel_link_$i", '')
+    );
+
+    if (!empty($images['src'])) {
+        $carouselImages[] = $images;
+    }
+}
 ?>
 
 <div class="relative w-full pt-[56%]">
-    <?php if (!empty($imageSrc)): ?>
+    <?php if (!empty($carouselImages)): ?>
         <div class='flex gap-2 absolute bottom-8 w-full justify-center z-10'>
-            <?php foreach ($imageSrc as $idx => $img): ?>
+            <?php foreach ($carouselImages as $idx => $carouselImage): ?>
                 <span class="circle-indicator <?php echo $idx === 0 ? 'active' : ''; ?>" data-idx="<?php echo $idx; ?>"></span>
             <?php endforeach; ?>
         </div>
-        <?php foreach ($imageSrc as $idx => $img): ?>
-            <a href="<?php echo esc_url($linkUrls[$idx]); ?>">
+        <?php foreach ($carouselImages as $idx => $carouselImage): ?>
+            <a href="<?php echo esc_url($carouselImage['link']); ?>">
                 <img 
-                    src="<?php echo esc_url($img); ?>" 
+                    src="<?php echo esc_url($carouselImage['src']); ?>" 
                     class="lg:h-full w-full object-contain object-center jumbotron-image <?php echo $idx === 0 ? 'active' : ''; ?>" 
                     alt="Jumbotron Image"
                 >
