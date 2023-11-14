@@ -17,6 +17,7 @@
         $courseLinks = array(
             array('name' => '土壤力學', 'link' => home_url('/courses/soil-mechanics/')),
             array('name' => '基礎工程', 'link' => home_url('/courses/foundation-engineering/')),
+            array('name' => 'RC鋼筋混凝土', 'link' => home_url('courses/rc%e9%8b%bc%e7%ad%8b%e6%b7%b7%e5%87%9d%e5%9c%9f/')),
             array('name' => '西班牙料理', 'link' => home_url('/courses/chef-ricky/'))
         );
     ?>
