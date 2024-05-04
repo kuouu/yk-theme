@@ -1,4 +1,11 @@
-<?php get_header(); 
+<?php 
+/*
+To view this page:
+1. Go to the WordPress admin panel and create a new page with slug 'subscription'.
+2. Go to /subscription to view the page.
+*/
+
+get_header(); 
 
 function convertToDotnetEncoding($str) {
     $search = ['%2D', '%5F', '%2E', '%21', '%2A', '%28', '%29', '%20'];
