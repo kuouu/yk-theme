@@ -13,41 +13,47 @@ function convertToDotnetEncoding($str) {
     return str_replace($search, $replace, $str);
 }
 
-function generateCheckMacValue($params) {
+function generateCheckMacValue($params, $hashKey, $hashIV) {
     ksort($params);
-    $str = "HashKey=ZXpQxLdrKxGnAcbc";
+    $str = "HashKey=" . $hashKey;
     foreach ($params as $key => $value) {
         $str .= "&$key=$value";
     }
-    $str .= "&HashIV=n1bmILLzgT8BRMwy";
+    $str .= "&HashIV=" . $hashIV;
     $str = strtolower(convertToDotnetEncoding(urlencode($str)));
     return strtoupper(hash('sha256', $str));
 }
 
+$config = json_decode(file_get_contents(get_template_directory() . '/ecpay-config.json'), true);
+$configParams = $config['subscription']['params'];
+$configHashKey = $config['subscription']['HashKey'];
+$configHashIV = $config['subscription']['HashIV'];
+
 $params = [
-    'MerchantID' => '3261883',
+    'MerchantID' => $configParams['MerchantID'],
     'MerchantTradeNo' => 'Order' . time(),
     'MerchantTradeDate' => date('Y/m/d H:i:s'),
     'PaymentType' => 'aio',
-    'TotalAmount' => '100',
-    'TradeDesc' => 'test desc',
-    'ItemName' => 'test name',
-    'ReturnURL' => 'http://localhost:8080',
+    'TotalAmount' => $configParams['TotalAmount'],
+    'TradeDesc' => $configParams['TradeDesc'],
+    'ItemName' => $configParams['ItemName'],
+    'ReturnURL' => $configParams['ReturnURL'],
     'ChoosePayment' => 'Credit',
     'EncryptType' => '1',
-    'ClientBackURL' => 'http://localhost:8080',
-    'PeriodAmount' => '100',
-    'PeriodType' => 'M',
-    'Frequency' => '5',
-    'ExecTimes' => '10',
-    'PeriodReturnURL' => 'http://localhost:8080',
+    'ClientBackURL' => $configParams['ClientBackURL'],
+    'PeriodAmount' => $configParams['PeriodAmount'],
+    'PeriodType' => $configParams['PeriodType'],
+    'Frequency' => $configParams['Frequency'],
+    'ExecTimes' => $configParams['ExecTimes'],
+    'PeriodReturnURL' => $configParams['PeriodReturnURL'],
 ];
 
-$checkMacValue = generateCheckMacValue($params);
+
+$checkMacValue = generateCheckMacValue($params, $configHashKey, $configHashIV);
 ?>
 
 <!-- HTML form with a button -->
-<form method="post" action="https://payment.ecpay.com.tw/Cashier/AioCheckOut/V5">
+<form method="post" action=<?php echo $config['subscription']['url'] ?>> <!-- Change to the production URL when going live -->
     <?php foreach ($params as $key => $value): ?>
     <input type="hidden" name="<?php echo $key; ?>" value="<?php echo $value; ?>">
     <?php endforeach; ?>

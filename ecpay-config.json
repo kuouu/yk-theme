@@ -1,0 +1,20 @@
+{
+    "subscription": {
+        "url": "https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5",
+        "HashKey": "pwFHCqoQZGmho4w6",
+        "HashIV": "EkRm7iFT261dpevs",
+        "params": {
+            "MerchantID": "3002607",
+            "TotalAmount": 100,
+            "TradeDesc": "test description",
+            "ItemName": "test name",
+            "ReturnURL": "http://localhost:8080/order",
+            "ClientBackURL": "http://localhost:8080",
+            "PeriodAmount": 100,
+            "PeriodType": "M",
+            "Frequency": 1,
+            "ExecTimes": 99,
+            "PeriodReturnURL": "http://localhost:8080/period"
+        }
+    }
+}
