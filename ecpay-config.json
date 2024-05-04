@@ -8,7 +8,7 @@
             "TotalAmount": 100,
             "TradeDesc": "test description",
             "ItemName": "test name",
-            "ReturnURL": "http://localhost:8080/order",
+            "ReturnURL": "http://localhost:8080/wp-json/subscription/payment",
             "ClientBackURL": "http://localhost:8080",
             "PeriodAmount": 100,
             "PeriodType": "M",
