@@ -28,6 +28,8 @@ $config = json_decode(file_get_contents(get_template_directory() . '/ecpay-confi
 $configParams = $config['subscription']['params'];
 $configHashKey = $config['subscription']['HashKey'];
 $configHashIV = $config['subscription']['HashIV'];
+$user_id = get_current_user_id();
+$website_url = get_site_url();
 
 $params = [
     'MerchantID' => $configParams['MerchantID'],
@@ -37,15 +39,16 @@ $params = [
     'TotalAmount' => $configParams['TotalAmount'],
     'TradeDesc' => $configParams['TradeDesc'],
     'ItemName' => $configParams['ItemName'],
-    'ReturnURL' => $configParams['ReturnURL'],
+    'ReturnURL' => $website_url . '/wp-json/subscription/payment',
     'ChoosePayment' => 'Credit',
     'EncryptType' => '1',
-    'ClientBackURL' => $configParams['ClientBackURL'],
+    'ClientBackURL' => $website_url . '/dashboard',
     'PeriodAmount' => $configParams['PeriodAmount'],
     'PeriodType' => $configParams['PeriodType'],
     'Frequency' => $configParams['Frequency'],
     'ExecTimes' => $configParams['ExecTimes'],
-    'PeriodReturnURL' => $configParams['PeriodReturnURL'],
+    'PeriodReturnURL' => $website_url . '/wp-json/subscription/period',
+    'CustomField1' => $user_id,
 ];
 
 
