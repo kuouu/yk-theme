@@ -24,11 +24,17 @@ function generateCheckMacValue($params, $hashKey, $hashIV) {
     return strtoupper(hash('sha256', $str));
 }
 
+$user_id = get_current_user_id();
+
+if ($user_id == 0) {
+    wp_redirect('/dashboard');
+    exit;
+}
+
 $config = json_decode(file_get_contents(get_template_directory() . '/ecpay-config.json'), true);
 $configParams = $config['subscription']['params'];
 $configHashKey = $config['subscription']['HashKey'];
 $configHashIV = $config['subscription']['HashIV'];
-$user_id = get_current_user_id();
 $website_url = get_site_url();
 
 $params = [
