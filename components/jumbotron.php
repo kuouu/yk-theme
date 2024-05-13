@@ -1,15 +1,5 @@
 <?php
-$carouselImages = array();
-for ($i = 1; $i <= 10; $i++) {
-    $images = array(
-        'src' => get_theme_mod("carousel_image_$i", ''),
-        'link' => get_theme_mod("carousel_link_$i", '')
-    );
-
-    if (!empty($images['src'])) {
-        $carouselImages[] = $images;
-    }
-}
+$carouselImages = isset($args['carouselImages']) ? $args['carouselImages'] : array();
 ?>
 
 <div class="relative w-full pt-[56%]">

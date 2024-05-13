@@ -48,7 +48,22 @@ for ($i = 1; $i <= 10; $i++) {
 ?>
 
 <!-- Jumbotron -->
-<?php get_template_part('components/jumbotron'); ?>
+<?php 
+
+$carouselImages = array();
+for ($i = 1; $i <= 10; $i++) {
+    $images = array(
+        'src' => get_theme_mod("carousel_image_$i", ''),
+        'link' => get_theme_mod("carousel_link_$i", '')
+    );
+
+    if (!empty($images['src'])) {
+        $carouselImages[] = $images;
+    }
+}
+get_template_part('components/jumbotron', null, array('carouselImages' => $carouselImages)); 
+
+?>
 
 <!-- Recommended Course -->
 <?php if (!empty($recommendedCourses)): ?>
