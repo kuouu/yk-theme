@@ -19,10 +19,10 @@ jobs:
         node-version: '14'
 
     - name: Install Tailwind CSS
-      run: npm install tailwindcss @tailwindcss/typography
+      run: npm install
 
     - name: Build Tailwind CSS
-      run: npx tailwindcss build -i ./tailwind.css -o ./build/index.css --minify
+      run: npm run build
       
     - name: Remove node_modules
       run: rm -rf node_modules
