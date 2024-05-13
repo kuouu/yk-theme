@@ -60,5 +60,5 @@ $checkMacValue = generateCheckMacValue($params, $configHashKey, $configHashIV);
     <input type="hidden" name="<?php echo $key; ?>" value="<?php echo $value; ?>">
     <?php endforeach; ?>
     <input type="hidden" name="CheckMacValue" value="<?php echo $checkMacValue; ?>">
-    <button type="submit">Click me</button>
+    <button type="submit">馬上訂閱！</button>
 </form>
