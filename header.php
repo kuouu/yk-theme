@@ -33,5 +33,5 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php get_template_part('navbar'); ?>
+<div id="navbar" style="position: sticky; top: 0; z-index: 100;"></div>
 <div class="gradient"></div>
