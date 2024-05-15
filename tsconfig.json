@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "module": "ES2015",
+        "target": "ES2015", // Set to ES5 for older browser support.
+        "strict": true,
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "allowJs": true,
+    },
+    "include": [
+        "src/**/*"
+    ],
+}
