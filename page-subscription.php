@@ -51,7 +51,7 @@ $subscription_courses = array(
 );
 if (!empty($subscription_courses)):     
 ?>
-    <div class="py-14 bg-right bg-contain bg-no-repeat"
+    <div class="pt-14 bg-right bg-contain bg-no-repeat"
         style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/homepage-bg1.png')">
         <!-- SectionTitle -->
         <div class="text-center mb-4">
@@ -69,7 +69,7 @@ if (!empty($subscription_courses)):
 <?php endif; ?>
 
 <!-- Subscribe Button -->
-<div class="flex justify-center w-full py-14">
+<div class="flex justify-center w-full py-10">
 <div id="subscribe-btn"></div>
 </div>
 

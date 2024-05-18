@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { format } from 'date-fns';
+import { Button } from '@chakra-ui/react';
 
 const config = {
 	subscription: {
@@ -106,7 +107,7 @@ function SubscribeButton({ userId }: { userId: number }) {
 				<input key={key} type="hidden" name={key} value={value} />
 			))}
 			<input type="hidden" name="CheckMacValue" value={checkMacValue} />
-			<button type="submit">馬上訂閱！</button>
+			<Button type="submit" colorScheme='blue'>馬上訂閱！</Button>
 		</form>
 	);
 }

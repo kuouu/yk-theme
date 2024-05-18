@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 import theme from './theme';
 import Navbar from './components/Navbar';
-import SubscribeButton from './components/SubscribeBtn';
+import SubscribeModal from './components/SubscribeModal';
 
 const navbarElement = document.getElementById('navbar');
 if (navbarElement) {
@@ -26,7 +26,7 @@ if (subscribeButtonElement) {
     );
     root.render(
         <ChakraProvider theme={theme}>
-            <SubscribeButton userId={userId}/>
+            <SubscribeModal userId={userId}/>
         </ChakraProvider>
     );
 }
