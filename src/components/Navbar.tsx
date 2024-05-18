@@ -6,9 +6,22 @@ import {
 	MenuButton,
 	MenuList,
 	MenuItem,
-	Button
+	Button,
+	IconButton,
+	useDisclosure,
+	Drawer,
+	DrawerOverlay,
+	DrawerContent,
+	DrawerCloseButton,
+	DrawerBody,
+	DrawerHeader,
+	Accordion,
+	AccordionItem,
+	AccordionButton,
+	AccordionIcon,
+	AccordionPanel
 } from '@chakra-ui/react';
-import { ChevronDownIcon } from '@chakra-ui/icons';
+import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
 import React from 'react';
 
 import logo from '../assets/icons/logo.svg';
@@ -39,8 +52,8 @@ const NavLink = ({ name, href }: {
 		{name}
 	</Link>
 
-
 const Navbar = () => {
+	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
 		<Flex
 			px={8}
@@ -50,14 +63,21 @@ const Navbar = () => {
 		>
 			<Link href='/'>
 				<Flex align={'center'} h={45} w={100}>
-					<Image src={logo} alt='Logo' h={45} w={45}/>
+					<Image src={logo} alt='Logo' h={45} w={45} />
 					<Image src={logoWord} alt='Logo Word' h={30} />
 				</Flex>
 			</Link>
-			<Flex justify={'space-between'} align={'center'} gap={4}>
+
+			{/* desktop & tablet view */}
+			<Flex
+				justify={'space-between'}
+				align={'center'}
+				gap={4}
+				display={{ base: 'none', md: 'flex' }}
+			>
 				<Menu>
-					<MenuButton 
-						as={Button} 
+					<MenuButton
+						as={Button}
 						variant={'ghost'}
 						rightIcon={<ChevronDownIcon />}
 					>
@@ -80,6 +100,49 @@ const Navbar = () => {
 				{links.map((link) => (
 					<NavLink key={'nav_' + link.name} name={link.name} href={link.href} />
 				))}
+			</Flex>
+
+			{/* mobile view */}
+			<Flex display={{ base: 'flex', md: 'none' }}>
+				<IconButton
+					onClick={onOpen}
+					aria-label='Menu'
+					icon={<HamburgerIcon />}
+				/>
+				<Drawer
+					isOpen={isOpen}
+					placement='right'
+					onClose={onClose}
+				>
+					<DrawerOverlay />
+					<DrawerContent>
+						<DrawerHeader>
+							<DrawerCloseButton />
+						</DrawerHeader>
+						<DrawerBody>
+							<Flex direction='column' gap={4}>
+								<Accordion allowToggle>
+									<AccordionItem>
+										<Flex align={'center'}>
+											<AccordionButton fontWeight={'bold'} pl={0}>精選課程</AccordionButton>
+											<AccordionIcon />
+										</Flex>
+										<AccordionPanel>
+											<Flex direction='column' gap={2}>
+												{courseLinks.map((link) => (
+													<NavLink key={'nav_' + link.name} name={link.name} href={link.href} />
+												))}
+											</Flex>
+										</AccordionPanel>
+									</AccordionItem>
+								</Accordion>
+								{links.map((link) => (
+									<NavLink key={'nav_' + link.name} name={link.name} href={link.href} />
+								))}
+							</Flex>
+						</DrawerBody>
+					</DrawerContent>
+				</Drawer>
 			</Flex>
 		</Flex>
 	);
