@@ -15,6 +15,12 @@ import SubscribeButton from './SubscribeBtn';
 
 const SubscribeModal = ({ userId }: { userId: number }) => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
+
+	if (userId === 0) {
+		window.location.replace('/dashboard');
+		return;
+	}
+
 	return (
 		<>
 			<Button onClick={onOpen} colorScheme='teal' size={'lg'}>方案內容</Button>

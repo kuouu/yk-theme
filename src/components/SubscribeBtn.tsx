@@ -23,11 +23,6 @@ const config = {
 function SubscribeButton({ userId }: { userId: number }) {
 	const [checkMacValue, setCheckMacValue] = useState('');
 
-	if (userId === 0) {
-		window.location.replace('/dashboard');
-		return;
-	}
-
 	const configParams = config.subscription.params;
 	const configHashKey = config.subscription.HashKey;
 	const configHashIV = config.subscription.HashIV;
