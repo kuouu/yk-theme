@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 
-import logo from '../assets/icons/logo.svg'; // TODO: fix error
+import logo from '../assets/icons/logo.svg';
 import logoWord from '../assets/icons/logo_word.svg';
 
 const links = [
@@ -48,8 +48,8 @@ const Navbar = () => {
 			bgColor={'blackAlpha.800'}
 		>
 			<Link href='/'>
-				<Flex align={'center'}>
-					<Image src={logo} alt='Logo' h={45} />
+				<Flex align={'center'} h={45} w={100}>
+					<Image src={logo} alt='Logo' h={45} w={45}/>
 					<Image src={logoWord} alt='Logo Word' h={30} />
 				</Flex>
 			</Link>
