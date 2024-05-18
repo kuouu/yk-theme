@@ -8,6 +8,7 @@ import {
 	MenuItem,
 	Button
 } from '@chakra-ui/react';
+import { ChevronDownIcon } from '@chakra-ui/icons';
 import React from 'react';
 
 import logo from '../assets/icons/logo.svg';
@@ -55,7 +56,13 @@ const Navbar = () => {
 			</Link>
 			<Flex justify={'space-between'} align={'center'} gap={4}>
 				<Menu>
-					<MenuButton as={Button} variant={'ghost'}>精選課程</MenuButton>
+					<MenuButton 
+						as={Button} 
+						variant={'ghost'}
+						rightIcon={<ChevronDownIcon />}
+					>
+						精選課程
+					</MenuButton>
 					<MenuList minW={'max-content'} zIndex={100}>
 						{courseLinks.map((link) => (
 							<MenuItem
