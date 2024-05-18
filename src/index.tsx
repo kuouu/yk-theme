@@ -20,12 +20,13 @@ if (navbarElement) {
 
 const subscribeButtonElement = document.getElementById('subscribe-btn');
 if (subscribeButtonElement) {
+    const userId = Number(themeData.userId);
     const root = createRoot(
         subscribeButtonElement
     );
     root.render(
         <ChakraProvider theme={theme}>
-            <SubscribeButton />
+            <SubscribeButton userId={userId}/>
         </ChakraProvider>
     );
 }

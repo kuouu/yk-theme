@@ -70,7 +70,7 @@ if (!empty($subscription_courses)):
 
 <!-- Subscribe Button -->
 <div class="flex justify-center w-full py-14">
-<?php get_template_part('components/subscribe-btn'); ?>
+<div id="subscribe-btn"></div>
 </div>
 
 <?php get_footer(); ?>

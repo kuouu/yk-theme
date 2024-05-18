@@ -19,13 +19,11 @@ const config = {
 	}
 }
 
-function SubscribeButton() {
+function SubscribeButton({ userId }: { userId: number }) {
 	const [checkMacValue, setCheckMacValue] = useState('');
 
-	const userId = 1; // TODO: get user id from WordPress
-
 	if (userId === 0) {
-		window.location.href = '/dashboard';
+		window.location.replace('/dashboard');
 		return;
 	}
 
@@ -53,7 +51,6 @@ function SubscribeButton() {
 		PeriodReturnURL: websiteUrl + '/wp-json/subscription/period',
 		CustomField1: userId,
 	};
-	console.log(params.MerchantTradeDate);
 
 	useEffect(() => {
 		const getCheckMacValue = async () => {
@@ -103,7 +100,7 @@ function SubscribeButton() {
 		return (await sha256(str)).toUpperCase();
 	}
 
-	return (
+	return userId !== 0 && (
 		<form method="post" action={config.subscription.url}>
 			{Object.entries(params).map(([key, value]) => (
 				<input key={key} type="hidden" name={key} value={value} />

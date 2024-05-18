@@ -50,12 +50,11 @@ $params = [
     'CustomField1' => $user_id,
 ];
 
-
 $checkMacValue = generateCheckMacValue($params, $configHashKey, $configHashIV);
 ?>
 
 <!-- HTML form with a button -->
-<form method="post" action=<?php echo $config['subscription']['url'] ?>> <!-- Change to the production URL when going live -->
+<form method="post" action=<?php echo $config['subscription']['url'] ?>>
     <?php foreach ($params as $key => $value): ?>
     <input type="hidden" name="<?php echo $key; ?>" value="<?php echo $value; ?>">
     <?php endforeach; ?>
