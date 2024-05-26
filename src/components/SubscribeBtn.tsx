@@ -30,7 +30,7 @@ function SubscribeButton({ userId }: { userId: number }) {
 
 	const params = {
 		MerchantID: configParams.MerchantID,
-		MerchantTradeNo: 'Order' + Date.now(),
+		MerchantTradeNo: userId + '_' + format(new Date(), 'yyyyMMddHHmmss'),
 		MerchantTradeDate: format(new Date(), 'yyyy/MM/dd HH:mm:ss'),
 		PaymentType: 'aio',
 		TotalAmount: configParams.TotalAmount,
