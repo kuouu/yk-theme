@@ -45,7 +45,6 @@ function SubscribeButton({ userId }: { userId: number }) {
 		Frequency: configParams.Frequency,
 		ExecTimes: configParams.ExecTimes,
 		PeriodReturnURL: websiteUrl + '/wp-json/subscription/period',
-		CustomField1: userId,
 	};
 
 	useEffect(() => {
